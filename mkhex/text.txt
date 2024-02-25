@@ -1,0 +1,12 @@
+
+hell.o:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <test>:
+   0:	00900093          	li	ra,9
+   4:	00102023          	sw	ra,0(zero) # 0 <test>
+   8:	00900113          	li	sp,9
+   c:	00202223          	sw	sp,4(zero) # 4 <test+0x4>
+  10:	002081b3          	add	gp,ra,sp
