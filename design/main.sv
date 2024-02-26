@@ -67,12 +67,12 @@ module main(input clk,input reset);
     // Instantiating the Memory module
     dmem data_mem (
         .clk(clk),
-        .write_address(alu_result[10:0]), // For write operations, use part of the ALU result as the address
-        .read_address(alu_result[10:0]),  // For read operations, also use part of the ALU result as the address
-        .data_in(read_data2),             // Data to write comes from the register file
-        .write_enable(write_en),         // Control signal from the controller
+        .write_address(alu_result[10:0]),
+        .read_address(alu_result[10:0]), 
+        .data_in(read_data2),            
+        .write_enable(write_en),         
         .read_en(read_en),
-        .data_out(mem_data_out)           // Data read from memory
+        .data_out(mem_data_out)          
     );
 
     imem inst_mem (
@@ -125,9 +125,6 @@ module main(input clk,input reset);
         .br_type(br_type),
         .sel_A(sel_A)
     );
-
-
-    
 
 
     assign write_data = (wb_sel) ? mem_data_out : alu_result;

@@ -1,8 +1,8 @@
 // memory data file (do not edit the following line - required for mem load use)
 // instance=/main_tb/dut/data_mem/memory_array
 // format=hex addressradix=h dataradix=h version=1.0 wordsperline=1 noaddress
-00000000
-00000009
+00000005
+00000007
 00000000
 00000000
 00000001

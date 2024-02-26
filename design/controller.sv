@@ -88,7 +88,7 @@ always @(*) begin
             wb_sel=1'b1;
             read_en=1'b0;
             br_type=1'b0;
-            sel_A=1'b0;
+            sel_A=1'b1;
             case(funct3)
                 3'b010:alu_op=4'b0000; //sw(0)
                default: alu_op = 4'b1111; // Undefined operation (0)

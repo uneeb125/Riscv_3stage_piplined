@@ -5,9 +5,11 @@ hell.o:     file format elf32-littleriscv
 Disassembly of section .text:
 
 00000000 <test>:
-   0:	00900093          	[33mli[0m	[34mra[0m,[35m9[0m
+   0:	00500093          	[33mli[0m	[34mra[0m,[35m5[0m
    4:	00102023          	[33msw[0m	[34mra[0m,[35m0[0m([34mzero[0m) # 0 <test>
-   8:	00900113          	[33mli[0m	[34msp[0m,[35m9[0m
+   8:	00600113          	[33mli[0m	[34msp[0m,[35m6[0m
    c:	00202223          	[33msw[0m	[34msp[0m,[35m4[0m([34mzero[0m) # 4 <test+0x4>
   10:	002081b3          	[33madd[0m	[34mgp[0m,[34mra[0m,[34msp[0m
-  14:	002081b3          	[33madd[0m	[34mgp[0m,[34mra[0m,[34msp[0m
+  14:	00209463          	[33mbne[0m	[34mra[0m,[34msp[0m,[35m1c[0m <[32mtest[0m[35m+0x[0m[35m1c[0m>
+  18:	0000006f          	[33mj[0m	[35m18[0m <[32mtest[0m[35m+0x[0m[35m18[0m>
+  1c:	00200533          	[33madd[0m	[34ma0[0m,[34mzero[0m,[34msp[0m
