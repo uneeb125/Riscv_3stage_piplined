@@ -1,4 +1,4 @@
-module main(input clk,input reset);
+module main(input logic clk,input reset);
 
     parameter integer DATA_WIDTH = 32;
     parameter integer ADDR_WIDTH = 32;
@@ -67,10 +67,9 @@ module main(input clk,input reset);
     // Instantiating the Memory module
     dmem data_mem (
         .clk(clk),
-        .write_address(alu_result[10:0]),
-        .read_address(alu_result[10:0]), 
+        .addr(alu_result>>2),
         .data_in(read_data2),            
-        .write_enable(write_en),         
+        .w_en(write_en),         
         .read_en(read_en),
         .data_out(mem_data_out)          
     );

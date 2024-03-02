@@ -15,14 +15,14 @@ module main_tb;
         clk = 0;
         reset = 1;
 
-        #20 reset = 0;
+        @(posedge clk) reset = 0;
 
         #100;
         $finish;
     end
 
     initial begin
-        $monitor("PC: %h, Instruction: %h,Read_Address: %h,Data_in: %h ,  write_data: %h, write_address: %h ...", dut.pc_current, dut.instruction, dut.data_mem.write_address , dut.data_mem.data_in, dut.reg_file.write_data, dut.reg_file.write_address);
+        $monitor("PC: %h, Instruction: %h,Read_Address: %h,Data_in: %h ,  write_data: %h, write_address: %h ...", dut.pc_current, dut.instruction, dut.data_mem.addr , dut.data_mem.data_in, dut.reg_file.write_data, dut.reg_file.write_address);
     end
 
     initial

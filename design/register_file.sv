@@ -10,7 +10,7 @@ module register_file (
 );
 
     // Declare the register array
-    logic [31:0] registers[0:32]; // 16 registers, each 32 bits wide
+    logic [31:0] registers[0:31]; // 16 registers, each 32 bits wide
 
     // Write operation (synchronous with clock)
     always @(negedge clk) begin
@@ -26,14 +26,5 @@ module register_file (
         read_data2 = (read_address2 == 0) ? 0 : registers[read_address2];
     end
 
-    initial begin
-        registers[1] = 1;  // x1 initialized to 5
-        registers[2] = 1; // x2 initialized to 10
-        registers[10]=15; //x10 initialized to 1
-        registers[5]=1;
-        //registers[3] = 3; //x3 initialized to 15
-        //registers[4]=  4;
 
-        // Initialize other registers as needed
-    end
 endmodule

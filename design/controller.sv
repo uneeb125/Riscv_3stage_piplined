@@ -47,7 +47,7 @@ always @(*) begin
             write_en=1'b0;
             wb_sel=1'b0;
             br_type=1'b0;
-            sel_A=1'b0;
+            sel_A=1'b1;
             // Determine ALU operation based on funct3
             case (funct3)
                 3'b000: alu_op = 4'b0000; // ADDI (0)
@@ -83,7 +83,7 @@ always @(*) begin
         end
         
         7'b0100011: begin//Sw Opcode
-            reg_write=1'b1;
+            reg_write=1'b0;
             write_en=1'b1;
             wb_sel=1'b1;
             read_en=1'b0;
