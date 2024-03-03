@@ -1,21 +1,21 @@
 [*]
 [*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
-[*] Sat Mar  2 20:48:52 2024
+[*] Sat Mar  2 23:28:31 2024
 [*]
 [dumpfile] "/home/uneeb/University/6th_Semester/Assignments/CA-L/RISCV_Single_Cycle/waveform.vcd"
-[dumpfile_mtime] "Sat Mar  2 20:48:22 2024"
-[dumpfile_size] 27316
+[dumpfile_mtime] "Sat Mar  2 23:20:36 2024"
+[dumpfile_size] 34596
 [savefile] "/home/uneeb/University/6th_Semester/Assignments/CA-L/RISCV_Single_Cycle/load_i.gtkw"
 [timestart] 0
-[size] 1920 1080
-[pos] -963 -533
-*-13.703727 29210 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[size] 956 563
+[pos] 961 452
+*-14.303726 91600 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] main_tb.
 [treeopen] main_tb.dut.
 [sst_width] 221
 [signals_width] 174
 [sst_expanded] 1
-[sst_vpaned_height] 330
+[sst_vpaned_height] 150
 @28
 main_tb.dut.PCCounter.clk
 @22
@@ -23,7 +23,7 @@ main_tb.dut.inst_mem.instruction[31:0]
 main_tb.dut.PCCounter.PC[31:0]
 @200
 -Immediate_gen_out
-@22
+@420
 main_tb.dut.imm_gen.Out[31:0]
 @200
 -Register_File
@@ -45,13 +45,25 @@ main_tb.dut.reg_file.read_data2[31:0]
 main_tb.dut.reg_file.write_enable
 @200
 -ALU
-@22
-#{main_tb.dut.alu_1.operand_a_i[31:0]} main_tb.dut.alu_1.operand_a_i[31] main_tb.dut.alu_1.operand_a_i[30] main_tb.dut.alu_1.operand_a_i[29] main_tb.dut.alu_1.operand_a_i[28] main_tb.dut.alu_1.operand_a_i[27] main_tb.dut.alu_1.operand_a_i[26] main_tb.dut.alu_1.operand_a_i[25] main_tb.dut.alu_1.operand_a_i[24] main_tb.dut.alu_1.operand_a_i[23] main_tb.dut.alu_1.operand_a_i[22] main_tb.dut.alu_1.operand_a_i[21] main_tb.dut.alu_1.operand_a_i[20] main_tb.dut.alu_1.operand_a_i[19] main_tb.dut.alu_1.operand_a_i[18] main_tb.dut.alu_1.operand_a_i[17] main_tb.dut.alu_1.operand_a_i[16] main_tb.dut.alu_1.operand_a_i[15] main_tb.dut.alu_1.operand_a_i[14] main_tb.dut.alu_1.operand_a_i[13] main_tb.dut.alu_1.operand_a_i[12] main_tb.dut.alu_1.operand_a_i[11] main_tb.dut.alu_1.operand_a_i[10] main_tb.dut.alu_1.operand_a_i[9] main_tb.dut.alu_1.operand_a_i[8] main_tb.dut.alu_1.operand_a_i[7] main_tb.dut.alu_1.operand_a_i[6] main_tb.dut.alu_1.operand_a_i[5] main_tb.dut.alu_1.operand_a_i[4] main_tb.dut.alu_1.operand_a_i[3] main_tb.dut.alu_1.operand_a_i[2] main_tb.dut.alu_1.operand_a_i[1] main_tb.dut.alu_1.operand_a_i[0]
-@29
+@28
 main_tb.dut.mux_operand_A.sel
-@22
+@420
+#{main_tb.dut.alu_1.operand_a_i[31:0]} main_tb.dut.alu_1.operand_a_i[31] main_tb.dut.alu_1.operand_a_i[30] main_tb.dut.alu_1.operand_a_i[29] main_tb.dut.alu_1.operand_a_i[28] main_tb.dut.alu_1.operand_a_i[27] main_tb.dut.alu_1.operand_a_i[26] main_tb.dut.alu_1.operand_a_i[25] main_tb.dut.alu_1.operand_a_i[24] main_tb.dut.alu_1.operand_a_i[23] main_tb.dut.alu_1.operand_a_i[22] main_tb.dut.alu_1.operand_a_i[21] main_tb.dut.alu_1.operand_a_i[20] main_tb.dut.alu_1.operand_a_i[19] main_tb.dut.alu_1.operand_a_i[18] main_tb.dut.alu_1.operand_a_i[17] main_tb.dut.alu_1.operand_a_i[16] main_tb.dut.alu_1.operand_a_i[15] main_tb.dut.alu_1.operand_a_i[14] main_tb.dut.alu_1.operand_a_i[13] main_tb.dut.alu_1.operand_a_i[12] main_tb.dut.alu_1.operand_a_i[11] main_tb.dut.alu_1.operand_a_i[10] main_tb.dut.alu_1.operand_a_i[9] main_tb.dut.alu_1.operand_a_i[8] main_tb.dut.alu_1.operand_a_i[7] main_tb.dut.alu_1.operand_a_i[6] main_tb.dut.alu_1.operand_a_i[5] main_tb.dut.alu_1.operand_a_i[4] main_tb.dut.alu_1.operand_a_i[3] main_tb.dut.alu_1.operand_a_i[2] main_tb.dut.alu_1.operand_a_i[1] main_tb.dut.alu_1.operand_a_i[0]
 #{main_tb.dut.alu_1.operand_b_i[31:0]} main_tb.dut.alu_1.operand_b_i[31] main_tb.dut.alu_1.operand_b_i[30] main_tb.dut.alu_1.operand_b_i[29] main_tb.dut.alu_1.operand_b_i[28] main_tb.dut.alu_1.operand_b_i[27] main_tb.dut.alu_1.operand_b_i[26] main_tb.dut.alu_1.operand_b_i[25] main_tb.dut.alu_1.operand_b_i[24] main_tb.dut.alu_1.operand_b_i[23] main_tb.dut.alu_1.operand_b_i[22] main_tb.dut.alu_1.operand_b_i[21] main_tb.dut.alu_1.operand_b_i[20] main_tb.dut.alu_1.operand_b_i[19] main_tb.dut.alu_1.operand_b_i[18] main_tb.dut.alu_1.operand_b_i[17] main_tb.dut.alu_1.operand_b_i[16] main_tb.dut.alu_1.operand_b_i[15] main_tb.dut.alu_1.operand_b_i[14] main_tb.dut.alu_1.operand_b_i[13] main_tb.dut.alu_1.operand_b_i[12] main_tb.dut.alu_1.operand_b_i[11] main_tb.dut.alu_1.operand_b_i[10] main_tb.dut.alu_1.operand_b_i[9] main_tb.dut.alu_1.operand_b_i[8] main_tb.dut.alu_1.operand_b_i[7] main_tb.dut.alu_1.operand_b_i[6] main_tb.dut.alu_1.operand_b_i[5] main_tb.dut.alu_1.operand_b_i[4] main_tb.dut.alu_1.operand_b_i[3] main_tb.dut.alu_1.operand_b_i[2] main_tb.dut.alu_1.operand_b_i[1] main_tb.dut.alu_1.operand_b_i[0]
 main_tb.dut.alu_1.result_o[31:0]
+@22
 #{main_tb.dut.alu_1.alu_op[3:0]} main_tb.dut.alu_1.alu_op[3] main_tb.dut.alu_1.alu_op[2] main_tb.dut.alu_1.alu_op[1] main_tb.dut.alu_1.alu_op[0]
+@200
+-Dmem
+@420
+#{main_tb.dut.data_mem.data_in[31:0]} main_tb.dut.data_mem.data_in[31] main_tb.dut.data_mem.data_in[30] main_tb.dut.data_mem.data_in[29] main_tb.dut.data_mem.data_in[28] main_tb.dut.data_mem.data_in[27] main_tb.dut.data_mem.data_in[26] main_tb.dut.data_mem.data_in[25] main_tb.dut.data_mem.data_in[24] main_tb.dut.data_mem.data_in[23] main_tb.dut.data_mem.data_in[22] main_tb.dut.data_mem.data_in[21] main_tb.dut.data_mem.data_in[20] main_tb.dut.data_mem.data_in[19] main_tb.dut.data_mem.data_in[18] main_tb.dut.data_mem.data_in[17] main_tb.dut.data_mem.data_in[16] main_tb.dut.data_mem.data_in[15] main_tb.dut.data_mem.data_in[14] main_tb.dut.data_mem.data_in[13] main_tb.dut.data_mem.data_in[12] main_tb.dut.data_mem.data_in[11] main_tb.dut.data_mem.data_in[10] main_tb.dut.data_mem.data_in[9] main_tb.dut.data_mem.data_in[8] main_tb.dut.data_mem.data_in[7] main_tb.dut.data_mem.data_in[6] main_tb.dut.data_mem.data_in[5] main_tb.dut.data_mem.data_in[4] main_tb.dut.data_mem.data_in[3] main_tb.dut.data_mem.data_in[2] main_tb.dut.data_mem.data_in[1] main_tb.dut.data_mem.data_in[0]
+main_tb.dut.data_mem.data_out[31:0]
+@28
+main_tb.dut.data_mem.read_en
+@25
+#{main_tb.dut.data_mem.addr[31:0]} main_tb.dut.data_mem.addr[29] main_tb.dut.data_mem.addr[28] main_tb.dut.data_mem.addr[27] main_tb.dut.data_mem.addr[26] main_tb.dut.data_mem.addr[25] main_tb.dut.data_mem.addr[24] main_tb.dut.data_mem.addr[23] main_tb.dut.data_mem.addr[22] main_tb.dut.data_mem.addr[21] main_tb.dut.data_mem.addr[20] main_tb.dut.data_mem.addr[19] main_tb.dut.data_mem.addr[18] main_tb.dut.data_mem.addr[17] main_tb.dut.data_mem.addr[16] main_tb.dut.data_mem.addr[15] main_tb.dut.data_mem.addr[14] main_tb.dut.data_mem.addr[13] main_tb.dut.data_mem.addr[12] main_tb.dut.data_mem.addr[11] main_tb.dut.data_mem.addr[10] main_tb.dut.data_mem.addr[9] main_tb.dut.data_mem.addr[8] main_tb.dut.data_mem.addr[7] main_tb.dut.data_mem.addr[6] main_tb.dut.data_mem.addr[5] main_tb.dut.data_mem.addr[4] main_tb.dut.data_mem.addr[3] main_tb.dut.data_mem.addr[2] main_tb.dut.data_mem.addr[1] main_tb.dut.data_mem.addr[0]
+@28
+main_tb.dut.data_mem.w_en
+main_tb.dut.data_mem.read_en
 [pattern_trace] 1
 [pattern_trace] 0

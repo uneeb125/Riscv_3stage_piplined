@@ -1,4 +1,6 @@
-hex:
+hex: hexgen vsim
+
+hexgen:
 	cd ./mkhex
 	./mkhex/mkhex.sh
 
@@ -13,4 +15,4 @@ vsim: vlog
 	vsim +memory -c work.main_tb  -do "run -all" 
 
 gtk: vsim
-	gtkwave waveform.vcd &&
+	gtkwave waveform.vcd &

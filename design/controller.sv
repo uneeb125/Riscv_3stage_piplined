@@ -18,7 +18,7 @@ always @(*) begin
     PCen = 1'b1;
 
     case (opcode)
-        7'b0110011: begin
+        7'b0110011: begin //R-Type
             reg_write = 1'b1;
             write_en=1'b0;
             read_en=1'b0;

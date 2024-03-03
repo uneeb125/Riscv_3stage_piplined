@@ -17,12 +17,8 @@ module main_tb;
 
         @(posedge clk) reset = 0;
 
-        #100;
+        #200;
         $finish;
-    end
-
-    initial begin
-        $monitor("PC: %h, Instruction: %h,Read_Address: %h,Data_in: %h ,  write_data: %h, write_address: %h ...", dut.pc_current, dut.instruction, dut.data_mem.addr , dut.data_mem.data_in, dut.reg_file.write_data, dut.reg_file.write_address);
     end
 
     initial

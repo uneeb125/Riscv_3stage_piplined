@@ -42,8 +42,8 @@ module main(input logic clk,input reset);
         .clk(clk),
         .reset(reset),
         .PCen(PCen),
-        .PC1(pc),
-        .PC(pc_current)
+        .next(pc),
+        .current(pc_current)
     );
     mux2x1 mux_operand_A(
         .sel(sel_A),
@@ -57,7 +57,7 @@ module main(input logic clk,input reset);
         .out(pc_next)
     );
 
-    mux2x1 mux1 (
+    mux2x1 mux_pc (
         .sel(br_taken),
         .sel0(pc_next),
         .sel1(alu_result),
@@ -67,7 +67,7 @@ module main(input logic clk,input reset);
     // Instantiating the Memory module
     dmem data_mem (
         .clk(clk),
-        .addr(alu_result>>2),
+        .addr(alu_result[31:2]),
         .data_in(read_data2),            
         .w_en(write_en),         
         .read_en(read_en),
