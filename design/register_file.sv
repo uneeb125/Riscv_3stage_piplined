@@ -1,10 +1,10 @@
 module register_file (
-    input clk,
-    input write_enable,
-    input [4:0] write_address, // 4 bits to select one of 16 registers
-    input [31:0] write_data,   // 32-bit data to write
-    input [4:0] read_address1, // First read address
-    input [4:0] read_address2, // Second read address
+    input logic clk,
+    input logic write_enable,
+    input logic [4:0] write_address, // 4 bits to select one of 16 registers
+    input logic [31:0] write_data,   // 32-bit data to write
+    input logic [4:0] read_address1, // First read address
+    input logic [4:0] read_address2, // Second read address
     output logic [31:0] read_data1, // Data from first read address
     output logic [31:0] read_data2  // Data from second read address
 );
@@ -20,7 +20,7 @@ module register_file (
     end
 
     // Read operation (combinatorial, assuming it should be always accessible)
-    always @* begin
+    always_comb begin
         // Register 0 always outputs 0
         read_data1 = (read_address1 == 0) ? 0 : registers[read_address1];
         read_data2 = (read_address2 == 0) ? 0 : registers[read_address2];

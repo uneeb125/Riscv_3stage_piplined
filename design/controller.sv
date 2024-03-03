@@ -9,22 +9,22 @@ module controller (
     output reg wb_sel,
     output reg write_en,
     output reg br_type,
-    output reg sel_A
+    output reg sel_A,
+    output reg sel_B
     );
 
-always @(*) begin
-    alu_op = 4'b0000;
-    reg_write = 1'b0;
-    PCen = 1'b1;
+always_comb begin
 
     case (opcode)
         7'b0110011: begin //R-Type
             reg_write = 1'b1;
             write_en=1'b0;
             read_en=1'b0;
-            wb_sel=1'b0;
+            wb_sel=1'b1;
             br_type=1'b0;
             sel_A=1'b1;
+            sel_B=1'b1;
+            PCen = 1'b1;
             case ({funct7, funct3})
                 10'b0000000000: alu_op = 4'b0000; // ADD (0)
                 10'b0100000000: alu_op = 4'b0001; // SUB (1)
@@ -45,9 +45,11 @@ always @(*) begin
             reg_write = 1'b1; // I-type instructions write to register
             read_en=1'b0;
             write_en=1'b0;
-            wb_sel=1'b0;
+            wb_sel=1'b1;
             br_type=1'b0;
             sel_A=1'b1;
+            sel_B=1'b0;
+            PCen = 1'b1;
             // Determine ALU operation based on funct3
             case (funct3)
                 3'b000: alu_op = 4'b0000; // ADDI (0)
@@ -67,10 +69,12 @@ always @(*) begin
         7'b0000011: begin
             reg_write = 1'b1; // Load-type instructions write to register
             read_en=1'b1;
-            wb_sel =1'b1;
+            wb_sel =1'b0;
             write_en=1'b0;
             br_type=1'b0;
             sel_A=1'b0;
+            sel_B=1'b0;
+            PCen = 1'b1;
             // Determine ALU operation based on funct3
             case (funct3)
                 3'b000: alu_op = 4'b0000; // LB (0)
@@ -85,10 +89,12 @@ always @(*) begin
         7'b0100011: begin//Sw Opcode
             reg_write=1'b0;
             write_en=1'b1;
-            wb_sel=1'b1;
+            wb_sel=1'b0;
             read_en=1'b0;
             br_type=1'b0;
             sel_A=1'b1;
+            sel_B=1'b0;
+            PCen = 1'b1;
             case(funct3)
                 3'b010:alu_op=4'b0000; //sw(0)
                default: alu_op = 4'b1111; // Undefined operation (0)
@@ -96,21 +102,52 @@ always @(*) begin
             end
 
         7'b1100011: begin //Branch Opcode
-            reg_write=1'b1;
+            reg_write=1'b0;
             write_en=1'b0;
-            wb_sel=1'b0;
+            wb_sel=1'b1;
             read_en=1'b0;
             br_type=1'b1;
             sel_A=1'b0;
+            sel_B=1'b0;
+            PCen = 1'b1;
             //case(funct3)
               //  3'b010:alu_op=4'b0000; //sw(0)
             //alu_op = 4'b1111; // Undefined operation (0)
             //endcase
             end
+        // AUIPC
+        7'b0010111: begin
+            reg_write = 1'b1; // I-type instructions write to register
+            read_en=1'b0;
+            write_en=1'b0;
+            wb_sel=1'b1;
+            br_type=1'b0;
+            sel_A=1'b0;
+            sel_B=1'b0;
+            PCen = 1'b1;
+            
+        end
+        // LUI
+        7'b0110111: begin
+            reg_write = 1'b1; // I-type instructions write to register
+            read_en=1'b0;
+            write_en=1'b0;
+            wb_sel=1'b1;
+            br_type=1'b0;
+            sel_A=1'b1;
+            sel_B=1'b0;
+            PCen = 1'b1;
+            
+        end
         default: begin
             alu_op = 4'b1111; // Undefined operation (31)
-            reg_write = 1'b0;
             PCen = 1'b1;
+            reg_write = 1'b1;
+            write_en=1'b0;
+            read_en=1'b0;
+            wb_sel=1'b0;
+            br_type=1'b0;
+            sel_A=1'b1;
         end
     endcase
 end

@@ -10,10 +10,6 @@ module dmem (
     // Declare the memory 2KB / 4 = 512 words of 32 bits each
     logic [31:0] mem[0:511];
 
-    initial begin
-        $readmemh("data.mem", mem);
-    end
-
     // Synchronous write
     always @(negedge clk) begin
         if (w_en) begin

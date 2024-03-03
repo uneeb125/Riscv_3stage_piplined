@@ -1,5 +1,5 @@
 module mux2x1(
-    input logic         sel, //from controller
+    input logic  sel, //from controller
     input logic  [31:0] sel0,sel1,
     output logic [31:0] out
 );

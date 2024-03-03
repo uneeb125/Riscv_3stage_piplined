@@ -1,5 +1,7 @@
 hex: hexgen vsim
 
+show: hexgen
+	riscv32-unknown-elf-objdump --disassembler-color=on -S .mkhex/hell.o
 hexgen:
 	cd ./mkhex
 	./mkhex/mkhex.sh
