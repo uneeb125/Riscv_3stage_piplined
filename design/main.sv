@@ -19,7 +19,7 @@ module main(input logic clk,input reset);
 
     logic [3:0] alu_op; 
     logic read_en;
-    logic wb_sel;
+    logic [1:0] wb_sel;
     logic write_en;
 
     logic mem_read, mem_write;
@@ -37,7 +37,7 @@ module main(input logic clk,input reset);
 
     //branch_cond Signal
     //logic br_taken;
-    logic br_type;
+    logic [1:0] br_type;
     // Instantiating the PC
     PCCounter PCCounter (
         .clk(clk),
@@ -60,10 +60,11 @@ module main(input logic clk,input reset);
         .out(ALU_in_B)
     );
 
-    mux2x1 mux_wb(
+    mux3x1 mux_wb(
         .sel(wb_sel),
         .sel0(dmem_out),
         .sel1(alu_result),
+        .sel2(pc_current+4),
         .out(reg_wdata)
     );
 

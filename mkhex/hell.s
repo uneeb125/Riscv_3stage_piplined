@@ -1,17 +1,15 @@
 test:
-    li x1, 5 
-    li x2, 6
-    add x3, x1,x2
-    sw x3, 0(x0)
-    auipc x3,0x5
-    lui x3, 0x5
-    li x1, 2 
-    li x2, 2
-    li x3, 5
-    beq x1,x2, branch
-    sw x1, 0(x0)
+    li a1, 2 
+    li a2, 2
+    add a3, a1,a2
+    add a3, a3, a3
+    sw a3, 0(zero)
+    jal jump
+    li a1, 3 
+    li a2, 3
+    li a1, 4 
+    li a2, 4
 
-branch:
-    sw x3, 0(x0)
-    
-    
+jump:
+    add a4, ra, zero
+    ret

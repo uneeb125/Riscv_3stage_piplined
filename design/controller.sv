@@ -6,9 +6,9 @@ module controller (
     output reg reg_write,  
     output reg PCen,        
     output reg read_en,
-    output reg wb_sel,
+    output reg [1:0] wb_sel,
     output reg write_en,
-    output reg br_type,
+    output reg [1:0] br_type,
     output reg sel_A,
     output reg sel_B
     );
@@ -20,8 +20,8 @@ always_comb begin
             reg_write = 1'b1;
             write_en=1'b0;
             read_en=1'b0;
-            wb_sel=1'b1;
-            br_type=1'b0;
+            wb_sel=2'b01;
+            br_type=2'b00;
             sel_A=1'b1;
             sel_B=1'b1;
             PCen = 1'b1;
@@ -45,8 +45,8 @@ always_comb begin
             reg_write = 1'b1; // I-type instructions write to register
             read_en=1'b0;
             write_en=1'b0;
-            wb_sel=1'b1;
-            br_type=1'b0;
+            wb_sel=2'b01;
+            br_type=2'b00;
             sel_A=1'b1;
             sel_B=1'b0;
             PCen = 1'b1;
@@ -69,9 +69,9 @@ always_comb begin
         7'b0000011: begin
             reg_write = 1'b1; // Load-type instructions write to register
             read_en=1'b1;
-            wb_sel =1'b0;
+            wb_sel =2'b00;
             write_en=1'b0;
-            br_type=1'b0;
+            br_type=2'b00;
             sel_A=1'b0;
             sel_B=1'b0;
             PCen = 1'b1;
@@ -89,9 +89,9 @@ always_comb begin
         7'b0100011: begin//Sw Opcode
             reg_write=1'b0;
             write_en=1'b1;
-            wb_sel=1'b0;
+            wb_sel=2'b00;
             read_en=1'b0;
-            br_type=1'b0;
+            br_type=2'b00;
             sel_A=1'b1;
             sel_B=1'b0;
             PCen = 1'b1;
@@ -104,9 +104,9 @@ always_comb begin
         7'b1100011: begin //Branch Opcode
             reg_write=1'b0;
             write_en=1'b0;
-            wb_sel=1'b1;
+            wb_sel=2'b01;
             read_en=1'b0;
-            br_type=1'b1;
+            br_type=2'b01;
             sel_A=1'b0;
             sel_B=1'b0;
             PCen = 1'b1;
@@ -120,8 +120,8 @@ always_comb begin
             reg_write = 1'b1; // I-type instructions write to register
             read_en=1'b0;
             write_en=1'b0;
-            wb_sel=1'b1;
-            br_type=1'b0;
+            wb_sel=2'b01;
+            br_type=2'b00;
             sel_A=1'b0;
             sel_B=1'b0;
             PCen = 1'b1;
@@ -132,21 +132,48 @@ always_comb begin
             reg_write = 1'b1; // I-type instructions write to register
             read_en=1'b0;
             write_en=1'b0;
-            wb_sel=1'b1;
-            br_type=1'b0;
+            wb_sel=2'b01;
+            br_type=2'b00;
             sel_A=1'b1;
             sel_B=1'b0;
             PCen = 1'b1;
             
         end
+
+        //Jal opcode
+        7'b1101111: begin
+            reg_write = 1'b1; 
+            read_en=1'b0;
+            write_en=1'b0;
+            wb_sel=2'b10;
+            br_type=2'b10;
+            sel_A=1'b0;
+            sel_B=1'b0;
+            PCen = 1'b1;
+            
+        end
+
+        //JalR opcode
+        7'b1100111: begin
+            reg_write = 1'b1; 
+            read_en=1'b0;
+            write_en=1'b0;
+            wb_sel=2'b10;
+            br_type=2'b10;
+            sel_A=1'b1;
+            sel_B=1'b0;
+            PCen = 1'b1;
+            
+        end
+
         default: begin
             alu_op = 4'b1111; // Undefined operation (31)
             PCen = 1'b1;
             reg_write = 1'b1;
             write_en=1'b0;
             read_en=1'b0;
-            wb_sel=1'b0;
-            br_type=1'b0;
+            wb_sel=2'b00;
+            br_type=2'b00;
             sel_A=1'b1;
         end
     endcase

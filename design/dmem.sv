@@ -14,7 +14,7 @@ module dmem (
     always @(negedge clk) begin
         if (w_en) begin
             mem[addr] <= data_in;
-            $writememh("data.mem", mem);
+            
         end
     end
     
@@ -23,6 +23,7 @@ module dmem (
     begin
         // if (read_en) begin
             data_out = mem[addr];
+            $writememh("data.mem", mem);
         // end
         // else begin
         //     data_out = {32{1'b0}}; // Output zeros or maintain previous value if not reading
