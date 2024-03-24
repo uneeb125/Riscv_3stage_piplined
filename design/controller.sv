@@ -110,10 +110,7 @@ always_comb begin
             sel_A=1'b0;
             sel_B=1'b0;
             PCen = 1'b1;
-            //case(funct3)
-              //  3'b010:alu_op=4'b0000; //sw(0)
-            //alu_op = 4'b1111; // Undefined operation (0)
-            //endcase
+            alu_op = 4'b0000;
             end
         // AUIPC
         7'b0010111: begin
@@ -150,6 +147,7 @@ always_comb begin
             sel_A=1'b0;
             sel_B=1'b0;
             PCen = 1'b1;
+            alu_op = 4'b0000;
             
         end
 
@@ -163,6 +161,7 @@ always_comb begin
             sel_A=1'b1;
             sel_B=1'b0;
             PCen = 1'b1;
+            alu_op = 4'b0000;
             
         end
 
