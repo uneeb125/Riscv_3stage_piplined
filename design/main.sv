@@ -211,7 +211,7 @@ module main#(
 
     dmem data_mem (
         .clk(clk),
-        .addr(alu_out_EM[31:2]),
+        .addr(alu_out_EM),
         .data_in(wd_out_EM),            
         .w_en(wr_enMW),         
         .read_en(rd_enMW),

@@ -1,6 +1,6 @@
 module dmem (
     input logic clk,  // Clock signal for synchronous write
-    input logic[29:0] addr,  // Separate read address
+    input logic[31:0] addr,  // Separate read address
     input logic[31:0] data_in,       // 32-bit input data for writing
     input logic w_en,        // Write enable signal
     input logic read_en,             // Read enable signal
@@ -13,7 +13,7 @@ module dmem (
     // Synchronous write
     always @(negedge clk) begin
         if (w_en) begin
-            mem[addr] <= data_in;
+            mem[addr[31:2]] <= data_in;
             
         end
     end

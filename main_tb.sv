@@ -17,7 +17,7 @@ module main_tb;
 
         @(posedge clk) reset = 0;
 
-        #200;
+        #500;
         $finish;
     end
 

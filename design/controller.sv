@@ -168,7 +168,7 @@ always_comb begin
         default: begin
             alu_op = 4'b1111; // Undefined operation (31)
             PCen = 1'b1;
-            reg_write = 1'b1;
+            reg_write = 1'b0;
             write_en=1'b0;
             read_en=1'b0;
             wb_sel=2'b00;
