@@ -11,7 +11,7 @@ output:
 setup: output
 	cd output
 vlog: 
-	vlog main_tb.sv ./design/*.sv
+	vlog  main_tb.sv ./design/*.sv
 
 vsim: vlog 
 	vsim +memory -c work.main_tb  -do "run -all" 

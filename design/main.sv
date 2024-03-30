@@ -4,7 +4,7 @@ module main#(
     REG_INDEX_WIDTH = 5)
     (input logic clk,input reset);
 
-    logic stall_FD, stall_MW;
+    logic stall, stall_MW;
 
     logic [ADDR_WIDTH-1:0] pc_next, pc_in_FD, pc_out_FD, pc_out_EM;
     logic PCen;
@@ -40,6 +40,8 @@ module main#(
     logic br_taken;
     logic [31:0] pc;
 
+    logic [31:0] forw_op_a, forw_op_b;
+
     //mux_Sel_A
     logic sel_A;
     logic [31:0]ALU_in_A;
@@ -49,6 +51,8 @@ module main#(
     //branch_cond Signal
     //logic br_taken;
     logic [1:0] br_type;
+
+    logic fora, forb;
 
     logic reg_wrMW, wr_enMW, rd_enMW;
     logic [1:0] wb_selMW;
@@ -133,9 +137,6 @@ module main#(
 
 
 
-
-
-
     branch_cond branch (
     .br_type(br_type),
     .funct3(inst_out_FD[14:12]),
@@ -144,17 +145,36 @@ module main#(
     .take_branch(br_taken)
     );
 
+
+    mux2x1 mux_forw_op_a(
+        .sel(fora),
+        .sel0(alu_out_EM),
+        .sel1(reg_rdata1),
+        .out(forw_op_a)
+        
+    );
+
+
+    mux2x1 mux_forw_op_b(
+        .sel(forb),
+        .sel0(alu_out_EM),
+        .sel1(reg_rdata2),
+        .out(forw_op_b)
+        
+    );
+
+
     mux2x1 mux_operand_A(
         .sel(sel_A),
         .sel0(pc_out_FD),
-        .sel1(reg_rdata1),
+        .sel1(forw_op_a),
         .out(ALU_in_A)
     );
 
     mux2x1 mux_operand_B(
         .sel(sel_B),
         .sel0(immediate_value),
-        .sel1(reg_rdata2),
+        .sel1(forw_op_b),
         .out(ALU_in_B)
     );
 
@@ -244,6 +264,22 @@ module main#(
         .sel_A(sel_A),
         .sel_B(sel_B)
     );
+
+
+    forward_unit fw_unit(
+        .reg_wrMW(reg_wrMW),
+        .br_taken(br_taken),
+        .ir_FD(inst_out_FD),
+        .ir_EM(inst_out_EM),
+        .stall(stall),
+        .stall_MW(stall_MW),
+        .flush(flush),
+        .fora(fora),
+        .forb(forb)
+    );
+
+    
+
 
     ctrl_buff ctrl_buff(
         .clk (clk),
