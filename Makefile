@@ -16,5 +16,5 @@ vlog:
 vsim: vlog 
 	vsim +memory -c work.main_tb  -do "run -all" 
 
-gtk: vsim
-	gtkwave waveform.vcd &
+gtk: 
+	gtkwave waveform.vcd load_i.gtkw &

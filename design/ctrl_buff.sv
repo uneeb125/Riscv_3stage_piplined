@@ -5,8 +5,8 @@ module ctrl_buff(
     output logic reg_wrMW, wr_enMW, rd_enMW, 
     output logic [1:0] wb_selMW
 );
-    always_ff @( posedge clk or negedge rst ) begin 
-        if (!rst) begin
+    always_ff @( posedge clk or posedge rst ) begin 
+        if (rst) begin
             reg_wrMW <= 0;
             wr_enMW  <= 0;
             rd_enMW  <= 0;

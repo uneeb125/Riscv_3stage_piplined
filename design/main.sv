@@ -117,7 +117,7 @@ module main#(
     register_file reg_file (
         .clk(clk),
         .write_enable(reg_wrMW),
-        .write_address(inst_out_FD[11:7]),
+        .write_address(inst_out_EM[11:7]),
         .write_data(reg_wdata),
         .read_address1(inst_out_FD[19:15]),
         .read_address2(inst_out_FD[24:20]),
@@ -130,8 +130,6 @@ module main#(
         .In(inst_out_FD),
         .Out(immediate_value)
     );
-
-
 
 
 
@@ -214,7 +212,7 @@ module main#(
     dmem data_mem (
         .clk(clk),
         .addr(alu_out_EM[31:2]),
-        .data_in(reg_rdata2),            
+        .data_in(wd_out_EM),            
         .w_en(wr_enMW),         
         .read_en(rd_enMW),
         .data_out(dmem_out)          

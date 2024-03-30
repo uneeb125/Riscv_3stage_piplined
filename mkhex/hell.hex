@@ -1,8 +1,0 @@
-
-hell.o:     file format elf32-littleriscv
-
-
-Disassembly of section .text:
-
-00000000 <.text>:
-   0:	00300093          	[33mli[0m	[34mra[0m,[35m3[0m
