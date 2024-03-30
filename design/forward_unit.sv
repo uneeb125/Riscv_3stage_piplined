@@ -5,14 +5,13 @@ module forward_unit #(parameter Width = 32)
         output logic stall,stall_MW,flush,fora,forb
     );
     
-    logic [4:0] EM_rs1_addr, EM_rs2_addr,FD_rd_addr;
-    assign EM_rs1_addr = ir_EM[19:15];
-    assign EM_rs2_addr = ir_EM[24:20];
-    assign FD_rd_addr = ir_FD[11:7];
+    logic [4:0] FD_rs1_addr, FD_rs2_addr,EM_rd_addr;
+    assign FD_rs1_addr = ir_FD[19:15];
+    assign FD_rs2_addr = ir_FD[24:20];
+    assign EM_rd_addr = ir_EM[11:7];
 
-    assign fora = (FD_rd_addr == EM_rs1_addr);
-    assign forb = (FD_rd_addr == EM_rs2_addr);
-    
+    assign fora = (EM_rd_addr == FD_rs1_addr)&&FD_rs1_addr;
+    assign forb = (EM_rd_addr == FD_rs2_addr)&&FD_rs2_addr; 
     assign flush = br_taken;
     endmodule
     

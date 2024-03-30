@@ -41,7 +41,6 @@ module main#(
     logic [31:0] pc;
 
     logic [31:0] forw_op_a, forw_op_b;
-
     //mux_Sel_A
     logic sel_A;
     logic [31:0]ALU_in_A;
@@ -94,8 +93,8 @@ module main#(
         .instruction(inst_in_FD)
     );
 
-    buff IR_FD(
-        .rst(reset),
+    buff_sync IR_FD(
+        .rst(flush||reset),
         .clk(clk),
         .en(1'b1),
         .din(inst_in_FD),
@@ -148,8 +147,8 @@ module main#(
 
     mux2x1 mux_forw_op_a(
         .sel(fora),
-        .sel0(alu_out_EM),
-        .sel1(reg_rdata1),
+        .sel0(reg_rdata1),
+        .sel1(alu_out_EM),
         .out(forw_op_a)
         
     );
@@ -157,8 +156,8 @@ module main#(
 
     mux2x1 mux_forw_op_b(
         .sel(forb),
-        .sel0(alu_out_EM),
-        .sel1(reg_rdata2),
+        .sel0(reg_rdata2),
+        .sel1(alu_out_EM),
         .out(forw_op_b)
         
     );

@@ -14,7 +14,7 @@ vlog:
 	vlog  main_tb.sv ./design/*.sv
 
 vsim: vlog 
-	vsim +memory -c work.main_tb  -do "run -all" 
+	vsim -c work.main_tb  -do "run -all" 
 
 gtk: 
 	gtkwave waveform.vcd load_i.gtkw &
