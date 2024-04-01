@@ -1,5 +1,6 @@
 hex: hexgen vsim
 
+
 show: hexgen
 	riscv32-unknown-elf-objdump --disassembler-color=on -S .mkhex/hell.o
 hexgen:
@@ -13,7 +14,7 @@ setup: output
 vlog: 
 	vlog  main_tb.sv ./design/*.sv
 
-vsim: vlog 
+vsim: vlog hexgen 
 	vsim -c work.main_tb  -do "run -all" 
 
 gtk: 

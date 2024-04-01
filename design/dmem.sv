@@ -10,6 +10,10 @@ module dmem (
     // Declare the memory 2KB / 4 = 512 words of 32 bits each
     logic [31:0] mem[0:511];
 
+    initial begin
+        $readmemh("data.mem", mem);
+    end
+
     // Synchronous write
     always @(negedge clk) begin
         if (w_en) begin
@@ -21,13 +25,8 @@ module dmem (
     // Asynchronous read
     always_comb 
     begin
-        // if (read_en) begin
-            data_out = mem[addr];
+            data_out = mem[addr[31:2]];
             $writememh("data.mem", mem);
-        // end
-        // else begin
-        //     data_out = {32{1'b0}}; // Output zeros or maintain previous value if not reading
-        // end
     end
 
     // Initialize memory with contents from .mem file

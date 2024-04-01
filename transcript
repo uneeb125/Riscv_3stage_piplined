@@ -1,5 +1,5 @@
 # vsim -c work.main_tb -do "run -all" 
-# Start time: 02:05:50 on Mar 31,2024
+# Start time: 16:13:33 on Apr 01,2024
 # Loading sv_std.std
 # Loading work.main_tb
 # Loading work.main
@@ -21,5 +21,5 @@
 # run -all
 # ** Note: $finish    : main_tb.sv(21)
 #    Time: 1505 ns  Iteration: 0  Instance: /main_tb
-# End time: 02:05:50 on Mar 31,2024, Elapsed time: 0:00:00
+# End time: 16:13:33 on Apr 01,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0

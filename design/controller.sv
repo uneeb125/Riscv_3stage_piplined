@@ -72,7 +72,7 @@ always_comb begin
             wb_sel =2'b00;
             write_en=1'b0;
             br_type=2'b00;
-            sel_A=1'b0;
+            sel_A=1'b1;
             sel_B=1'b0;
             PCen = 1'b1;
             // Determine ALU operation based on funct3

@@ -5,8 +5,8 @@ hell.o:     file format elf32-littleriscv
 Disassembly of section .text:
 
 00000000 <gcd-0x8>:
-   0:	00b00413          	[33mli[0m	[34ms0[0m,[35m11[0m
-   4:	06e00493          	[33mli[0m	[34ms1[0m,[35m110[0m
+   0:	00002403          	[33mlw[0m	[34ms0[0m,[35m0[0m([34mzero[0m) # 0 <gcd-0x8>
+   4:	00402483          	[33mlw[0m	[34ms1[0m,[35m4[0m([34mzero[0m) # 4 <gcd-0x4>
 
 00000008 <gcd>:
    8:	00940a63          	[33mbeq[0m	[34ms0[0m,[34ms1[0m,[35m1c[0m <[32mstop[0m>
@@ -18,8 +18,8 @@ Disassembly of section .text:
   18:	ff1ff06f          	[33mj[0m	[35m8[0m <[32mgcd[0m>
 
 0000001c <stop>:
-  1c:	00802023          	[33msw[0m	[34ms0[0m,[35m0[0m([34mzero[0m) # 0 <gcd-0x8>
+  1c:	00802423          	[33msw[0m	[34ms0[0m,[35m8[0m([34mzero[0m) # 8 <gcd>
 
 00000020 <end>:
-  20:	00002503          	[33mlw[0m	[34ma0[0m,[35m0[0m([34mzero[0m) # 0 <gcd-0x8>
+  20:	00802503          	[33mlw[0m	[34ma0[0m,[35m8[0m([34mzero[0m) # 8 <gcd>
   24:	ffdff06f          	[33mj[0m	[35m20[0m <[32mend[0m>

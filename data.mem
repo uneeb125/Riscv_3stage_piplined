@@ -2,8 +2,8 @@
 // instance=/main_tb/dut/data_mem/mem
 // format=hex addressradix=h dataradix=h version=1.0 wordsperline=1 noaddress
 0000000b
-xxxxxxxx
-xxxxxxxx
+0000006e
+0000000b
 xxxxxxxx
 xxxxxxxx
 xxxxxxxx
