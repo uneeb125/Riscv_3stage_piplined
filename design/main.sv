@@ -250,7 +250,7 @@ module main#(
 
 
     controller ctrlr (
-        .opcode(inst_out_FD[6:0]),
+        .opcode_in(inst_out_FD[6:0]),
         .funct3(inst_out_FD[14:12]),
         .funct7(inst_out_FD[31:25]),
         .alu_op(alu_op),
