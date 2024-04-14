@@ -1,0 +1,717 @@
+$date
+	Sun Apr 14 06:00:00 2024
+$end
+$version
+	ModelSim Version 2020.1
+$end
+$timescale
+	1ps
+$end
+
+$scope module tb_uart_top $end
+$var reg 1 ! clk $end
+$var reg 1 " reset $end
+$var reg 32 # cpu_address [31:0] $end
+$var reg 32 $ cpu_data [31:0] $end
+$var reg 1 % write_enable $end
+$var reg 1 & cpu_tx_start $end
+$var reg 8 ' dout [7:0] $end
+
+$scope module UUT $end
+$var wire 1 ( clk $end
+$var wire 1 ) reset $end
+$var wire 1 * cpu_address [31] $end
+$var wire 1 + cpu_address [30] $end
+$var wire 1 , cpu_address [29] $end
+$var wire 1 - cpu_address [28] $end
+$var wire 1 . cpu_address [27] $end
+$var wire 1 / cpu_address [26] $end
+$var wire 1 0 cpu_address [25] $end
+$var wire 1 1 cpu_address [24] $end
+$var wire 1 2 cpu_address [23] $end
+$var wire 1 3 cpu_address [22] $end
+$var wire 1 4 cpu_address [21] $end
+$var wire 1 5 cpu_address [20] $end
+$var wire 1 6 cpu_address [19] $end
+$var wire 1 7 cpu_address [18] $end
+$var wire 1 8 cpu_address [17] $end
+$var wire 1 9 cpu_address [16] $end
+$var wire 1 : cpu_address [15] $end
+$var wire 1 ; cpu_address [14] $end
+$var wire 1 < cpu_address [13] $end
+$var wire 1 = cpu_address [12] $end
+$var wire 1 > cpu_address [11] $end
+$var wire 1 ? cpu_address [10] $end
+$var wire 1 @ cpu_address [9] $end
+$var wire 1 A cpu_address [8] $end
+$var wire 1 B cpu_address [7] $end
+$var wire 1 C cpu_address [6] $end
+$var wire 1 D cpu_address [5] $end
+$var wire 1 E cpu_address [4] $end
+$var wire 1 F cpu_address [3] $end
+$var wire 1 G cpu_address [2] $end
+$var wire 1 H cpu_address [1] $end
+$var wire 1 I cpu_address [0] $end
+$var wire 1 J cpu_data [31] $end
+$var wire 1 K cpu_data [30] $end
+$var wire 1 L cpu_data [29] $end
+$var wire 1 M cpu_data [28] $end
+$var wire 1 N cpu_data [27] $end
+$var wire 1 O cpu_data [26] $end
+$var wire 1 P cpu_data [25] $end
+$var wire 1 Q cpu_data [24] $end
+$var wire 1 R cpu_data [23] $end
+$var wire 1 S cpu_data [22] $end
+$var wire 1 T cpu_data [21] $end
+$var wire 1 U cpu_data [20] $end
+$var wire 1 V cpu_data [19] $end
+$var wire 1 W cpu_data [18] $end
+$var wire 1 X cpu_data [17] $end
+$var wire 1 Y cpu_data [16] $end
+$var wire 1 Z cpu_data [15] $end
+$var wire 1 [ cpu_data [14] $end
+$var wire 1 \ cpu_data [13] $end
+$var wire 1 ] cpu_data [12] $end
+$var wire 1 ^ cpu_data [11] $end
+$var wire 1 _ cpu_data [10] $end
+$var wire 1 ` cpu_data [9] $end
+$var wire 1 a cpu_data [8] $end
+$var wire 1 b cpu_data [7] $end
+$var wire 1 c cpu_data [6] $end
+$var wire 1 d cpu_data [5] $end
+$var wire 1 e cpu_data [4] $end
+$var wire 1 f cpu_data [3] $end
+$var wire 1 g cpu_data [2] $end
+$var wire 1 h cpu_data [1] $end
+$var wire 1 i cpu_data [0] $end
+$var wire 1 j write_enable $end
+$var reg 11 k dvsr [10:0] $end
+$var reg 8 l data_out [7:0] $end
+$var reg 1 m tx_start $end
+$var reg 1 n tick $end
+$var wire 1 o tx_done_tick $end
+$var wire 1 p tx $end
+
+$scope module uart_baud_gen $end
+$var wire 1 ( clk $end
+$var wire 1 ) reset $end
+$var wire 1 q dvsr [10] $end
+$var wire 1 r dvsr [9] $end
+$var wire 1 s dvsr [8] $end
+$var wire 1 t dvsr [7] $end
+$var wire 1 u dvsr [6] $end
+$var wire 1 v dvsr [5] $end
+$var wire 1 w dvsr [4] $end
+$var wire 1 x dvsr [3] $end
+$var wire 1 y dvsr [2] $end
+$var wire 1 z dvsr [1] $end
+$var wire 1 { dvsr [0] $end
+$var reg 1 | tick $end
+$var reg 12 } r_reg [11:0] $end
+$var reg 12 ~ dvsr2 [11:0] $end
+$upscope $end
+
+$scope module uart_reg_block $end
+$var wire 1 ( clk $end
+$var wire 1 j write_enable $end
+$var wire 1 E address [4] $end
+$var wire 1 F address [3] $end
+$var wire 1 G address [2] $end
+$var wire 1 H address [1] $end
+$var wire 1 I address [0] $end
+$var wire 1 J data_in [31] $end
+$var wire 1 K data_in [30] $end
+$var wire 1 L data_in [29] $end
+$var wire 1 M data_in [28] $end
+$var wire 1 N data_in [27] $end
+$var wire 1 O data_in [26] $end
+$var wire 1 P data_in [25] $end
+$var wire 1 Q data_in [24] $end
+$var wire 1 R data_in [23] $end
+$var wire 1 S data_in [22] $end
+$var wire 1 T data_in [21] $end
+$var wire 1 U data_in [20] $end
+$var wire 1 V data_in [19] $end
+$var wire 1 W data_in [18] $end
+$var wire 1 X data_in [17] $end
+$var wire 1 Y data_in [16] $end
+$var wire 1 Z data_in [15] $end
+$var wire 1 [ data_in [14] $end
+$var wire 1 \ data_in [13] $end
+$var wire 1 ] data_in [12] $end
+$var wire 1 ^ data_in [11] $end
+$var wire 1 _ data_in [10] $end
+$var wire 1 ` data_in [9] $end
+$var wire 1 a data_in [8] $end
+$var wire 1 b data_in [7] $end
+$var wire 1 c data_in [6] $end
+$var wire 1 d data_in [5] $end
+$var wire 1 e data_in [4] $end
+$var wire 1 f data_in [3] $end
+$var wire 1 g data_in [2] $end
+$var wire 1 h data_in [1] $end
+$var wire 1 i data_in [0] $end
+$var reg 11 !! dvsr [10:0] $end
+$var reg 8 "! data_out [7:0] $end
+$var reg 1 #! tx_start $end
+$upscope $end
+
+$scope module uart_transmitter $end
+$var parameter 32 $! DBIT $end
+$var parameter 32 %! SB_TICK $end
+$var wire 1 &! clk $end
+$var wire 1 ) reset $end
+$var wire 1 '! tx_start $end
+$var wire 1 (! d_tx [7] $end
+$var wire 1 )! d_tx [6] $end
+$var wire 1 *! d_tx [5] $end
+$var wire 1 +! d_tx [4] $end
+$var wire 1 ,! d_tx [3] $end
+$var wire 1 -! d_tx [2] $end
+$var wire 1 .! d_tx [1] $end
+$var wire 1 /! d_tx [0] $end
+$var reg 1 0! tx_done_tick $end
+$var reg 1 1! tx $end
+$var integer 32 2! state_current $end
+$var integer 32 3! state_next $end
+$var reg 5 4! bit_count [4:0] $end
+$var reg 8 5! shift_reg [7:0] $end
+$var reg 1 6! tx_reg $end
+$var reg 1 7! tx_next $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+1"
+b0 #
+b0 $
+x%
+0&
+bx '
+bx k
+bx l
+xm
+0n
+0|
+b0 }
+bx0 ~
+bx !!
+bx "!
+x#!
+x0!
+11!
+b0 4!
+bx 5!
+16!
+x7!
+b1000 $!
+b10000 %!
+b0 2!
+b0 3!
+xo
+1p
+0(
+1)
+0I
+0H
+0G
+0F
+0E
+0D
+0C
+0B
+0A
+0@
+0?
+0>
+0=
+0<
+0;
+0:
+09
+08
+07
+06
+05
+04
+03
+02
+01
+00
+0/
+0.
+0-
+0,
+0+
+0*
+0i
+0h
+0g
+0f
+0e
+0d
+0c
+0b
+0a
+0`
+0_
+0^
+0]
+0\
+0[
+0Z
+0Y
+0X
+0W
+0V
+0U
+0T
+0S
+0R
+0Q
+0P
+0O
+0N
+0M
+0L
+0K
+0J
+xj
+x{
+xz
+xy
+xx
+xw
+xv
+xu
+xt
+xs
+xr
+xq
+0&!
+x'!
+x/!
+x.!
+x-!
+x,!
+x+!
+x*!
+x)!
+x(!
+$end
+#10000
+1!
+1(
+#20000
+0!
+0(
+#30000
+1!
+1(
+#40000
+0!
+0(
+#45000
+0"
+0)
+#50000
+1!
+1(
+b1 }
+#60000
+0!
+0(
+b10 }
+#65000
+1%
+b10000000000000000000000000000000 #
+b1101001 $
+1j
+1i
+1f
+1d
+1c
+1*
+#70000
+1!
+1(
+b11 }
+#80000
+0!
+0(
+b100 }
+b1101001 "!
+b1101001 l
+1/!
+0.!
+0-!
+1,!
+0+!
+1*!
+1)!
+0(!
+#85000
+b10000000000000000000000000000100 #
+b1 $
+0f
+0d
+0c
+1G
+#90000
+1!
+1(
+b101 }
+#100000
+0!
+0(
+b110 }
+b1 !!
+b1 k
+1{
+0z
+0y
+0x
+0w
+0v
+0u
+0t
+0s
+0r
+0q
+b10 ~
+#105000
+b10000000000000000000000000001000 #
+0G
+1F
+#110000
+1!
+1(
+1|
+b0 }
+1n
+1&!
+#120000
+0!
+0(
+b1 }
+1#!
+1m
+1'!
+b1 3!
+#130000
+1!
+1(
+0|
+b0 }
+0n
+0&!
+#140000
+0!
+0(
+b1 }
+#150000
+1!
+1(
+1|
+b0 }
+1n
+1&!
+b1 2!
+06!
+b1101001 5!
+b10 3!
+01!
+0p
+#160000
+0!
+0(
+b1 }
+#170000
+1!
+1(
+0|
+b0 }
+0n
+0&!
+#180000
+0!
+0(
+b1 }
+#190000
+1!
+1(
+1|
+b0 }
+1n
+1&!
+b10 2!
+16!
+11!
+1p
+#200000
+0!
+0(
+b1 }
+#210000
+1!
+1(
+0|
+b0 }
+0n
+0&!
+#220000
+0!
+0(
+b1 }
+#230000
+1!
+1(
+1|
+b0 }
+1n
+1&!
+b1 4!
+06!
+01!
+0p
+#240000
+0!
+0(
+b1 }
+#250000
+1!
+1(
+0|
+b0 }
+0n
+0&!
+#260000
+0!
+0(
+b1 }
+#270000
+1!
+1(
+1|
+b0 }
+1n
+1&!
+b10 4!
+#280000
+0!
+0(
+b1 }
+#290000
+1!
+1(
+0|
+b0 }
+0n
+0&!
+#300000
+0!
+0(
+b1 }
+#310000
+1!
+1(
+1|
+b0 }
+1n
+1&!
+b11 4!
+16!
+11!
+1p
+#320000
+0!
+0(
+b1 }
+#330000
+1!
+1(
+0|
+b0 }
+0n
+0&!
+#340000
+0!
+0(
+b1 }
+#350000
+1!
+1(
+1|
+b0 }
+1n
+1&!
+b100 4!
+06!
+01!
+0p
+#360000
+0!
+0(
+b1 }
+#370000
+1!
+1(
+0|
+b0 }
+0n
+0&!
+#380000
+0!
+0(
+b1 }
+#390000
+1!
+1(
+1|
+b0 }
+1n
+1&!
+b101 4!
+16!
+11!
+1p
+#400000
+0!
+0(
+b1 }
+#410000
+1!
+1(
+0|
+b0 }
+0n
+0&!
+#420000
+0!
+0(
+b1 }
+#430000
+1!
+1(
+1|
+b0 }
+1n
+1&!
+b110 4!
+#440000
+0!
+0(
+b1 }
+#450000
+1!
+1(
+0|
+b0 }
+0n
+0&!
+#460000
+0!
+0(
+b1 }
+#470000
+1!
+1(
+1|
+b0 }
+1n
+1&!
+b111 4!
+06!
+b11 3!
+01!
+0p
+#480000
+0!
+0(
+b1 }
+#490000
+1!
+1(
+0|
+b0 }
+0n
+0&!
+#500000
+0!
+0(
+b1 }
+#510000
+1!
+1(
+1|
+b0 }
+1n
+1&!
+b11 2!
+b1000 4!
+16!
+11!
+1p
+#520000
+0!
+0(
+b1 }
+#530000
+1!
+1(
+0|
+b0 }
+0n
+0&!
+#540000
+0!
+0(
+b1 }
+#550000
+1!
+1(
+1|
+b0 }
+1n
+1&!
+b0 4!
+#560000
+0!
+0(
+b1 }
+#570000
+1!
+1(
+0|
+b0 }
+0n
+0&!
+#580000
+0!
+0(
+b1 }
+#590000
+1!
+1(
+1|
+b0 }
+1n
+1&!
+#600000
+0!
+0(
+b1 }
+#610000
+1!
+1(
+0|
+b0 }
+0n
+0&!
+#620000
+0!
+0(
+b1 }

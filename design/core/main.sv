@@ -56,6 +56,7 @@ module main#(
     logic reg_wrMW, wr_enMW, rd_enMW;
     logic [1:0] wb_selMW;
 
+    logic dmem_en, uart_en;
 
 
 
@@ -223,7 +224,16 @@ module main#(
 //--------------------------------------------------------------------------------
 //Execute ---- MEMORY
 
-
+    LSU #(
+        .DATA_WIDTH(32)
+    )
+    ls_unit 
+    (
+        .dbus_addr(alu_out_EM),
+        .opcode_in(inst_out_EM[6:0]),
+        .dmem_sel(dmem_en),
+        .uart_sel(uart_en)
+    );
 
 
 
@@ -232,9 +242,18 @@ module main#(
         .clk(clk),
         .addr(alu_out_EM),
         .data_in(wd_out_EM),            
-        .w_en(wr_enMW),         
+        .w_en(wr_enMW && dmem_en),         
         .read_en(rd_enMW),
         .data_out(dmem_out)          
+    );
+
+    uart_top uart_mod(
+        .clk(clk),
+        .reset(reset),
+        .cpu_address(alu_out_EM),
+        .cpu_data(wd_out_EM),
+        .write_enable(uart_en)
+        
     );
 
 
@@ -266,6 +285,7 @@ module main#(
 
 
     forward_unit fw_unit(
+        .dmem_en(dmem_en),
         .reg_wrMW(reg_wrMW),
         .br_taken(br_taken),
         .ir_FD(inst_out_FD),

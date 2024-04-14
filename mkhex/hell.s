@@ -1,16 +1,11 @@
-    lw x8, 0(x0)
-    lw x9, 4(x0)
-    
-gcd:   beq x8, x9, stop 
-       blt x8, x9, less 
-       sub x8, x8, x9 
+    li x1, 5
+    lui x4, 0x80000
 
-less: 
-       sub x9, x9, x8 
-       j gcd        
+    sw x1, 0(x0)
+    sw x1, 0(x4)
+    li x2, 1
+    sw x2, 4(x4)
+    li x3, 1
+    sw x3, 8(x4)
 
-stop:  sw x8,8(x0) 
-
-end:   lw x10,8(x0) 
-       j end      
-
+ 
