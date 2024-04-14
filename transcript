@@ -1,5 +1,5 @@
 # vsim -c work.main_tb -do "run -all" 
-# Start time: 08:33:24 on Apr 14,2024
+# Start time: 07:55:51 on Apr 02,2024
 # Loading sv_std.std
 # Loading work.main_tb
 # Loading work.main
@@ -13,13 +13,7 @@
 # Loading work.immediategeneration
 # Loading work.branch_cond
 # Loading work.alu
-# Loading work.LSU_sv_unit
-# Loading work.LSU
 # Loading work.dmem
-# Loading work.uart_top
-# Loading work.baud_gen
-# Loading work.uart_reg
-# Loading work.uart_tx
 # Loading work.mux3x1
 # Loading work.controller_sv_unit
 # Loading work.controller
@@ -29,5 +23,5 @@
 # run -all
 # ** Note: $finish    : main_tb.sv(21)
 #    Time: 1505 ns  Iteration: 0  Instance: /main_tb
-# End time: 08:33:25 on Apr 14,2024, Elapsed time: 0:00:01
+# End time: 07:55:52 on Apr 02,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
