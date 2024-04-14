@@ -1,9 +1,9 @@
-hex: hexgen vsim
+hex: gen
+	nvim mkhex/hell.s
 
-
-show: hexgen
+show: gen
 	riscv32-unknown-elf-objdump --disassembler-color=on -S .mkhex/hell.o
-hexgen:
+gen:
 	cd ./mkhex
 	./mkhex/mkhex.sh
 
@@ -12,9 +12,9 @@ output:
 setup: output
 	cd output
 vlog: 
-	vlog  main_tb.sv ./design/*.sv
+	@vlog main_tb.sv $(shell find ./design -type f \( -name '*.sv' \))
 
-vsim: vlog hexgen 
+vsim: vlog 
 	vsim -c work.main_tb  -do "run -all" 
 
 gtk: 
