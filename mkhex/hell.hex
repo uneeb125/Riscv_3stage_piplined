@@ -14,3 +14,4 @@ Disassembly of section .text:
   18:	00100193          	[33mli[0m	[34mgp[0m,[35m1[0m
   1c:	00322423          	[33msw[0m	[34mgp[0m,[35m8[0m([34mtp[0m) # 8 <.text+0x8>
   20:	00022303          	[33mlw[0m	[34mt1[0m,[35m0[0m([34mtp[0m) # 0 <.text>
+  24:	00422383          	[33mlw[0m	[34mt2[0m,[35m4[0m([34mtp[0m) # 4 <.text+0x4>
