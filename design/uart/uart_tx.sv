@@ -6,7 +6,7 @@ module uart_tx #(
     reset,
     input logic tx_start,
     input logic [7:0] d_tx,
-    output logic tx_done_tick,
+    output logic tx_done,
     output logic tx
 );
 
@@ -32,6 +32,7 @@ module uart_tx #(
     
   always_ff @(posedge clk, posedge reset)
     if (reset) begin
+      // tx_done = 1;
       bit_count <= 0;
     end 
     else if(!(state_current==data)) begin
@@ -48,12 +49,16 @@ module uart_tx #(
     case (state_current)
       idle: begin
         tx_reg = 1;
+        tx_done = 0;
         if(tx_start==1)
           state_next = load;
+        else
+          state_next = idle;
       end 
 
       load: begin
         tx_reg = 0;
+        tx_done = 0;
         if(bit_count==0)begin
           shift_reg = d_tx;
           state_next = data;
@@ -63,6 +68,7 @@ module uart_tx #(
       end
 
       data: begin
+        tx_done = 0;
         tx_reg = shift_reg[bit_count];
           if(bit_count>=DBIT-1)
             state_next = stop;
@@ -76,6 +82,7 @@ module uart_tx #(
             state_next = idle;
           else
             state_next = stop;
+            tx_done = 1;
       end
     endcase
 

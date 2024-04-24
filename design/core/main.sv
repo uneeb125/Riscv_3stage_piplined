@@ -58,7 +58,7 @@ module main#(
 
     logic dmem_en, uart_en;
 
-
+    logic [31:0] dmemout,uartout;
 
 
 
@@ -244,7 +244,7 @@ module main#(
         .data_in(wd_out_EM),            
         .w_en(wr_enMW && dmem_en),         
         .read_en(rd_enMW),
-        .data_out(dmem_out)          
+        .data_out(dmemout)          
     );
 
     uart_top uart_mod(
@@ -252,8 +252,16 @@ module main#(
         .reset(reset),
         .cpu_address(alu_out_EM),
         .cpu_data(wd_out_EM),
-        .write_enable(uart_en)
-        
+        .write_enable(uart_en && wr_enMW),
+        .cout(uartout)
+    );
+
+    uartmux DUmux(
+        .uart_en(uart_en),
+        .dmem_en(dmem_en),
+        .dmemout(dmemout),
+        .uartout(uartout),
+        .dmem_out(dmem_out)
     );
 
 

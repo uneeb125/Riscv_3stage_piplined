@@ -3,18 +3,23 @@ module uart_top (
     input  logic        reset,
     input  logic [31:0] cpu_address,
     input  logic [31:0] cpu_data,
-    input  logic        write_enable
+    input  logic        write_enable,
+    output logic [31:0] cout
     // output logic [ 7:0] dout
 );
-
+  logic        tx_done;
   logic [10:0] dvsr;
   logic [ 7:0] data_out;
   logic tx_start;
 
+
   logic tick;
+
+  logic full;
 
 
   baud_gen uart_baud_gen (
+      .full (full),
       .clk  (clk),
       .reset(reset),
       .dvsr (dvsr),
@@ -25,11 +30,14 @@ module uart_top (
       .clk(clk),
       .write_enable(write_enable),
       .address(cpu_address[4:0]),
-      .data_in(cpu_data),
+      .data_in(cpu_data[30:0]),
+      .tx_done(tx_done),
+      .cout(cout),
 
       .dvsr(dvsr),
       .data_out(data_out),
-      .tx_start(tx_start)
+      .tx_start(tx_start),
+      .full(full)
   );
 
   //   uart_rx #(
@@ -52,7 +60,7 @@ module uart_top (
       .reset       (reset),
       .tx_start    (tx_start),
       .d_tx        (data_out),
-      .tx_done_tick(tx_done_tick),
+      .tx_done(tx_done),
       .tx          (tx)
   );
 

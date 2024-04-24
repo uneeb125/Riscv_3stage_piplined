@@ -1,9 +1,9 @@
-hex: gen
+hex: 
 	nvim mkhex/hell.s
 
 show: gen
 	riscv32-unknown-elf-objdump --disassembler-color=on -S .mkhex/hell.o
-gen:
+gen: hex
 	cd ./mkhex
 	./mkhex/mkhex.sh
 

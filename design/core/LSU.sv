@@ -14,4 +14,5 @@ module LSU #(
 
   assign dmem_sel = (opcode == OP_L | opcode == OP_S) && (dbus_msb_addr == DMEM_ADDR);
   assign uart_sel = (opcode == OP_L | opcode == OP_S) && (dbus_msb_addr == UART_ADDR);
+  
 endmodule
