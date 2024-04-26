@@ -17,10 +17,13 @@ module uart_reg (
 
   always @(negedge clk) begin
     if (write_enable) begin
+      if((address>>2)==0)
       registers[address>>2] <= {1'b1,data_in};
+      else
+      registers[address>>2] <= data_in;
     end
     else if (tx_done) begin
-      registers[0] <= 0;
+      registers[0] <= registers[0] & !(32'h80000000);
     end
   end
 
