@@ -2,7 +2,7 @@ module main#(
     DATA_WIDTH = 32,
     ADDR_WIDTH = 32,
     REG_INDEX_WIDTH = 5)
-    (input logic clk, reset);
+    (input logic clk,input reset,input interrupt);
 
     logic stall, stall_MW;
 
@@ -16,6 +16,19 @@ module main#(
     logic [REG_INDEX_WIDTH-1:0] read_reg1, read_reg2, write_reg;
     logic [DATA_WIDTH-1:0] reg_rdata1, reg_rdata2, reg_wdata;
     logic reg_write_en;
+    logic [31:0] immediate_value_EM;
+    logic [31:0] ALU_in_A_EM;
+
+    logic        csr_epc_taken;
+    logic [31:0] csr_rdata, csr_evec;
+    logic csr_reg_rdpin;
+    logic csr_reg_wrpin;
+    logic is_mret;
+    logic [31:0] pc1;
+
+    logic csr_reg_rdpin_MW;
+    logic csr_reg_wrpin_MW;
+    logic is_mret_MW;
 
 
 
@@ -74,22 +87,25 @@ module main#(
         .out(pc)
     );
 
+    mux2x1 mux_csr(
+        .sel(csr_epc_taken),
+        .sel0(csr_evec),
+        .sel1(pc),
+        .out(pc1)
+
+    );
+
     // Instantiating the PC
     PCCounter PCCounter (
         .clk(clk),
         .reset(reset),
         .PCen(PCen),
-        .next(pc),
+        .next(pc1),
         .current(pc_in_FD)
     );
 
 
-
-
-
-
-
-    imem inst_mem (
+     imem inst_mem (
         .address(pc_in_FD),
         .instruction(inst_in_FD)
     );
@@ -193,6 +209,24 @@ module main#(
         .dout(alu_out_EM)
     );
 
+    buff imm(
+        .rst(reset),
+        .clk(clk),
+        .en(1'b1),
+        .din(immediate_value),
+        .dout(immediate_value_EM)
+
+    );
+
+    buff w_data(
+        .rst(reset),
+        .clk(clk),
+        .en(1'b1),
+        .din(ALU_in_A),
+        .dout(ALU_in_A_EM)
+
+    );
+
 
     buff pc_EM(
         .rst(reset),
@@ -262,12 +296,28 @@ module main#(
         .dmem_out(dmem_out)
     );
 
+    csr csr1(
+        .clk(clk),
+        .rst(reset),
+        .csr_reg_wrpin(csr_reg_wrpin_MW),
+        .csr_reg_rdpin(csr_reg_wrpin_MW),
+        .csr_is_mret(is_mret_MW),
+        .interrupt(interrupt),
+        .csr_pc(pc_out_EM),
+        .csr_addr32(immediate_value_EM),
+        .csr_wdata(ALU_in_A_EM),
+        .csr_epc_taken(csr_epc_taken),
+        .csr_rdata(csr_rdata),
+        .csr_evec(csr_evec)
+       );
+
 
     mux3x1 mux_wb(
         .sel(wb_selMW),
         .sel0(dmem_out),
         .sel1(alu_out_EM),
         .sel2(pc_out_EM+4),
+        .sel3(csr_rdata),
         .out(reg_wdata)
     );
 
@@ -284,7 +334,10 @@ module main#(
         .write_en(write_en),
         .br_type(br_type),
         .sel_A(sel_A),
-        .sel_B(sel_B)
+        .sel_B(sel_B),
+        .csr_reg_rdpin(csr_reg_rdpin),
+        .csr_reg_wrpin(csr_reg_wrpin),
+        .is_mret(is_mret)
     );
 
 
@@ -301,21 +354,24 @@ module main#(
         .forb(forb)
     );
 
-    
-
-
-    ctrl_buff ctrl_buff(
+   ctrl_buff ctrl_buff(
         .clk (clk),
         .en  (1'b1),
         .rst (reset),
         .reg_wr (reg_write_en),
         .wr_en  (write_en),
         .rd_en  (read_en),
+        .csr_reg_rdpin(csr_reg_rdpin),
+        .csr_reg_wrpin(csr_reg_wrpin),
+        .is_mret(is_mret),
         .wb_sel (wb_sel),
         .reg_wrMW (reg_wrMW),
         .wr_enMW  (wr_enMW ),
         .rd_enMW  (rd_enMW ),
-        .wb_selMW (wb_selMW)
+        .wb_selMW (wb_selMW),
+        .csr_reg_rdpin_MW(csr_reg_rdpin_MW),
+        .csr_reg_wrpin_MW(csr_reg_wrpin_MW),
+        .is_mret_MW(is_mret_MW)
     );
 
 
