@@ -40,4 +40,15 @@ typedef struct packed {
   logic [4:0] rs1;
   logic [4:0] rs2;
 } struc_inst;
+
+typedef enum logic [31:0] {
+  MSTATUS_ADDR = 32'h300,
+  MIE_ADDR     = 32'h304,
+  MTVEC_ADDR   = 32'h305,
+  MEPC_ADDR    = 32'h341,
+  MCAUSE_ADDR  = 32'h342,
+  MIP_ADDR     = 32'h344
+} type_csr_addr;
+
+
 `endif

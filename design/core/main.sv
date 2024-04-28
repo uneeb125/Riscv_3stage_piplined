@@ -2,7 +2,7 @@ module main#(
     DATA_WIDTH = 32,
     ADDR_WIDTH = 32,
     REG_INDEX_WIDTH = 5)
-    (input logic clk,input reset);
+    (input logic clk, reset);
 
     logic stall, stall_MW;
 
@@ -236,8 +236,6 @@ module main#(
     );
 
 
-
-
     dmem data_mem (
         .clk(clk),
         .addr(alu_out_EM),
@@ -263,8 +261,6 @@ module main#(
         .uartout(uartout),
         .dmem_out(dmem_out)
     );
-
-
 
 
     mux3x1 mux_wb(
