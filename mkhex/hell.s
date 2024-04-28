@@ -1,6 +1,8 @@
     li x1, 5
     lui x4, 0x80000
-
+    csrrw x1,mie,x1
+    li x3, 8
+    csrrw x2,mie,x3
     sw x1, 0(x0)
     sw x1, 0(x4)
     li x2, 1

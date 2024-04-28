@@ -89,8 +89,8 @@ module main#(
 
     mux2x1 mux_csr(
         .sel(csr_epc_taken),
-        .sel0(csr_evec),
-        .sel1(pc),
+        .sel0(pc),
+        .sel1(csr_evec),
         .out(pc1)
 
     );
