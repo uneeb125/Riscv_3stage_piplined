@@ -10,7 +10,8 @@ typedef enum logic [6:0] {
   OP_A  = 7'b0010111,
   OP_UI = 7'b0110111,
   OP_J  = 7'b1101111,
-  OP_JR = 7'b1100111
+  OP_JR = 7'b1100111,
+  OP_CSR= 7'b1110011
 } type_opcode;
 
 typedef enum logic [3:0] {

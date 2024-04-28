@@ -11,7 +11,10 @@ module controller (
     output reg write_en,
     output reg [1:0] br_type,
     output reg sel_A,
-    output reg sel_B
+    output reg sel_B,
+    output reg csr_reg_rdpin,
+    output reg csr_reg_wrpin,
+    output reg is_mret
     );
 type_opcode opcode;
 
@@ -29,6 +32,8 @@ always_comb begin
             sel_A=1'b1;
             sel_B=1'b1;
             PCen = 1'b1;
+            csr_reg_rdpin = 1'b0;
+            csr_reg_wrpin = 1'b0;
             case ({funct7, funct3})
                 10'b0000000000: alu_op = ALU_ADD  ; // ADD (0)
                 10'b0100000000: alu_op = ALU_SUB  ; // SUB (1)
@@ -54,6 +59,8 @@ always_comb begin
             sel_A=1'b1;
             sel_B=1'b0;
             PCen = 1'b1;
+            csr_reg_wrpin = 1'b0;
+            csr_reg_rdpin = 1'b0;
             // Determine ALU operation based on funct3
             case (funct3)
                 3'b000: alu_op = ALU_ADD ; // ADDI (0)
@@ -79,6 +86,8 @@ always_comb begin
             sel_A=1'b1;
             sel_B=1'b0;
             PCen = 1'b1;
+            csr_reg_wrpin = 1'b0;
+            csr_reg_rdpin = 1'b0;
             // Determine ALU operation based on funct3
             case (funct3)
                 3'b000: alu_op = ALU_ADD; // LB (0)
@@ -99,6 +108,8 @@ always_comb begin
             sel_A=1'b1;
             sel_B=1'b0;
             PCen = 1'b1;
+            csr_reg_wrpin = 1'b0;
+            csr_reg_rdpin = 1'b0;
             case(funct3)
                 3'b010:alu_op=ALU_ADD; //sw(0)
                default: alu_op = ALU_ADD; // Undefined operation (0)
@@ -115,6 +126,8 @@ always_comb begin
             sel_B=1'b0;
             PCen = 1'b1;
             alu_op = ALU_ADD;
+            csr_reg_wrpin = 1'b0;
+            csr_reg_rdpin = 1'b0;
             end
         // AUIPC
         OP_A: begin
@@ -126,6 +139,8 @@ always_comb begin
             sel_A=1'b0;
             sel_B=1'b0;
             PCen = 1'b1;
+            csr_reg_wrpin = 1'b0;
+            csr_reg_rdpin = 1'b0;
             
         end
         // LUI
@@ -138,6 +153,8 @@ always_comb begin
             sel_A=1'b1;
             sel_B=1'b0;
             PCen = 1'b1;
+            csr_reg_wrpin = 1'b0;
+            csr_reg_rdpin = 1'b0;
             
         end
 
@@ -152,6 +169,8 @@ always_comb begin
             sel_B=1'b0;
             PCen = 1'b1;
             alu_op = ALU_ADD;
+            csr_reg_wrpin = 1'b0;
+            csr_reg_rdpin = 1'b0;
             
         end
 
@@ -166,12 +185,26 @@ always_comb begin
             sel_B=1'b0;
             PCen = 1'b1;
             alu_op = ALU_ADD;
+            csr_reg_wrpin = 1'b0;
+            csr_reg_rdpin = 1'b0;
             
+        end
+
+        OP_CSR: begin
+            csr_reg_wrpin = 1'b1;
+            csr_reg_rdpin = 1'b1;
+            wb_sel     = 2'b11;
+            reg_write  = 1'b1;
+            br_type    = 2'b00;
+
+
         end
 
         default: begin
             alu_op = ALU_ADD; // Undefined operation (31)
             PCen = 1'b1;
+            csr_reg_wrpin = 1'b0;
+            csr_reg_rdpin = 1'b0;
             reg_write = 1'b0;
             write_en=1'b0;
             read_en=1'b0;
@@ -179,6 +212,13 @@ always_comb begin
             br_type=2'b00;
             sel_A=1'b1;
         end
+    endcase
+end
+
+always_comb begin
+    is_mret = 1'b0;
+    case ( opcode )
+    32'h30200073: is_mret = 1'b1; // Here 30200073 is hex value of mret instruction
     endcase
 end
 

@@ -1,5 +1,9 @@
 # vsim -c work.main_tb -do "run -all" 
+<<<<<<< HEAD
 # Start time: 16:42:08 on Apr 24,2024
+=======
+# Start time: 00:24:34 on Apr 28,2024
+>>>>>>> 4496cc4 (Integrated CSR)
 # Loading sv_std.std
 # Loading work.main_tb
 # Loading work.main
@@ -20,15 +24,27 @@
 # Loading work.baud_gen
 # Loading work.uart_reg
 # Loading work.uart_tx
+<<<<<<< HEAD
 # Loading work.uartmux
+=======
+# Loading work.csr
+>>>>>>> 4496cc4 (Integrated CSR)
 # Loading work.mux3x1
 # Loading work.controller_sv_unit
 # Loading work.controller
 # Loading work.forward_unit_sv_unit
 # Loading work.forward_unit
 # Loading work.ctrl_buff
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 3, found 2.
+#    Time: 0 ps  Iteration: 0  Instance: /main_tb/dut File: main_tb.sv Line: 7
+# ** Warning: (vsim-3722) main_tb.sv(7): [TFMPC] - Missing connection for port 'interrupt'.
 # run -all
 # ** Note: $finish    : main_tb.sv(21)
 #    Time: 1505 ns  Iteration: 0  Instance: /main_tb
+<<<<<<< HEAD
 # End time: 16:42:09 on Apr 24,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
+=======
+# End time: 00:24:34 on Apr 28,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+>>>>>>> 4496cc4 (Integrated CSR)
