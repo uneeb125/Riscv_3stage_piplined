@@ -1,5 +1,5 @@
 module register_file (
-    input logic clk,
+    input logic clk, rst,
     input logic write_enable,
     input logic [4:0] write_address, // 4 bits to select one of 16 registers
     input logic [31:0] write_data,   // 32-bit data to write
@@ -13,7 +13,10 @@ module register_file (
     logic [31:0] registers[0:31]; // 16 registers, each 32 bits wide
 
     // Write operation (synchronous with clock)
-    always @(negedge clk) begin
+    always @(negedge clk, posedge rst) begin
+        if (rst) begin
+            registers[4] = 'b0;
+        end
         if (write_enable && write_address != 0) begin // Check for write enable and non-zero address
             registers[write_address] <= write_data;
         end

@@ -1,22 +1,21 @@
 [*]
 [*] GTKWave Analyzer v3.3.118 (w)1999-2023 BSI
-[*] Sun Apr 14 03:19:38 2024
+[*] Mon Apr 29 00:24:15 2024
 [*]
-[dumpfile] "/home/uneeb/University/6th_Semester/Assignments/CA-L/UART/waveform.vcd"
-[dumpfile_mtime] "Sun Apr 14 01:00:14 2024"
-[dumpfile_size] 101166
-[savefile] "/home/uneeb/University/6th_Semester/Assignments/CA-L/UART/load_i.gtkw"
-[timestart] 0
-[size] 956 483
-[pos] 961 531
-*-14.437464 405000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[dumpfile] "/home/uneeb/University/6th_Semester/Assignments/CA-L/RISCV_Piplined/waveform.vcd"
+[dumpfile_mtime] "Mon Apr 29 00:21:50 2024"
+[dumpfile_size] 432490
+[savefile] "/home/uneeb/University/6th_Semester/Assignments/CA-L/RISCV_Piplined/load_i.gtkw"
+[timestart] 68500
+[size] 1916 483
+[pos] 1 531
+*-15.060706 167200 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] main_tb.
 [treeopen] main_tb.dut.
 [treeopen] main_tb.dut.ctrlr.
 [treeopen] main_tb.dut.inst_mem.
-[treeopen] main_tb.dut.uart_mod.
 [sst_width] 193
-[signals_width] 218
+[signals_width] 215
 [sst_expanded] 1
 [sst_vpaned_height] 242
 @28
@@ -102,27 +101,35 @@ main_tb.dut.inst_mem.instruction[31:0]
 main_tb.dut.PCCounter.current[31:0]
 @200
 -Immediate_gen_out
-@420
+@22
 main_tb.dut.imm_gen.Out[31:0]
+@28
+main_tb.dut.mux_csr.sel
+@22
+main_tb.dut.mux_csr.out[31:0]
+#{main_tb.dut.mux_csr.sel0[31:0]} main_tb.dut.mux_csr.sel0[31] main_tb.dut.mux_csr.sel0[30] main_tb.dut.mux_csr.sel0[29] main_tb.dut.mux_csr.sel0[28] main_tb.dut.mux_csr.sel0[27] main_tb.dut.mux_csr.sel0[26] main_tb.dut.mux_csr.sel0[25] main_tb.dut.mux_csr.sel0[24] main_tb.dut.mux_csr.sel0[23] main_tb.dut.mux_csr.sel0[22] main_tb.dut.mux_csr.sel0[21] main_tb.dut.mux_csr.sel0[20] main_tb.dut.mux_csr.sel0[19] main_tb.dut.mux_csr.sel0[18] main_tb.dut.mux_csr.sel0[17] main_tb.dut.mux_csr.sel0[16] main_tb.dut.mux_csr.sel0[15] main_tb.dut.mux_csr.sel0[14] main_tb.dut.mux_csr.sel0[13] main_tb.dut.mux_csr.sel0[12] main_tb.dut.mux_csr.sel0[11] main_tb.dut.mux_csr.sel0[10] main_tb.dut.mux_csr.sel0[9] main_tb.dut.mux_csr.sel0[8] main_tb.dut.mux_csr.sel0[7] main_tb.dut.mux_csr.sel0[6] main_tb.dut.mux_csr.sel0[5] main_tb.dut.mux_csr.sel0[4] main_tb.dut.mux_csr.sel0[3] main_tb.dut.mux_csr.sel0[2] main_tb.dut.mux_csr.sel0[1] main_tb.dut.mux_csr.sel0[0]
+#{main_tb.dut.mux_csr.sel1[31:0]} main_tb.dut.mux_csr.sel1[31] main_tb.dut.mux_csr.sel1[30] main_tb.dut.mux_csr.sel1[29] main_tb.dut.mux_csr.sel1[28] main_tb.dut.mux_csr.sel1[27] main_tb.dut.mux_csr.sel1[26] main_tb.dut.mux_csr.sel1[25] main_tb.dut.mux_csr.sel1[24] main_tb.dut.mux_csr.sel1[23] main_tb.dut.mux_csr.sel1[22] main_tb.dut.mux_csr.sel1[21] main_tb.dut.mux_csr.sel1[20] main_tb.dut.mux_csr.sel1[19] main_tb.dut.mux_csr.sel1[18] main_tb.dut.mux_csr.sel1[17] main_tb.dut.mux_csr.sel1[16] main_tb.dut.mux_csr.sel1[15] main_tb.dut.mux_csr.sel1[14] main_tb.dut.mux_csr.sel1[13] main_tb.dut.mux_csr.sel1[12] main_tb.dut.mux_csr.sel1[11] main_tb.dut.mux_csr.sel1[10] main_tb.dut.mux_csr.sel1[9] main_tb.dut.mux_csr.sel1[8] main_tb.dut.mux_csr.sel1[7] main_tb.dut.mux_csr.sel1[6] main_tb.dut.mux_csr.sel1[5] main_tb.dut.mux_csr.sel1[4] main_tb.dut.mux_csr.sel1[3] main_tb.dut.mux_csr.sel1[2] main_tb.dut.mux_csr.sel1[1] main_tb.dut.mux_csr.sel1[0]
 @200
 -Reg_file
-@c00200
+@800200
 -Reg_file
-@420
+@22
 #{main_tb.dut.reg_file.read_address1[4:0]} main_tb.dut.reg_file.read_address1[4] main_tb.dut.reg_file.read_address1[3] main_tb.dut.reg_file.read_address1[2] main_tb.dut.reg_file.read_address1[1] main_tb.dut.reg_file.read_address1[0]
 #{main_tb.dut.reg_file.read_address2[4:0]} main_tb.dut.reg_file.read_address2[4] main_tb.dut.reg_file.read_address2[3] main_tb.dut.reg_file.read_address2[2] main_tb.dut.reg_file.read_address2[1] main_tb.dut.reg_file.read_address2[0]
+@420
 main_tb.dut.reg_file.read_data1[31:0]
 @22
 main_tb.dut.reg_file.read_data2[31:0]
 #{main_tb.dut.reg_file.write_address[4:0]} main_tb.dut.reg_file.write_address[4] main_tb.dut.reg_file.write_address[3] main_tb.dut.reg_file.write_address[2] main_tb.dut.reg_file.write_address[1] main_tb.dut.reg_file.write_address[0]
+@23
 #{main_tb.dut.reg_file.write_data[31:0]} main_tb.dut.reg_file.write_data[31] main_tb.dut.reg_file.write_data[30] main_tb.dut.reg_file.write_data[29] main_tb.dut.reg_file.write_data[28] main_tb.dut.reg_file.write_data[27] main_tb.dut.reg_file.write_data[26] main_tb.dut.reg_file.write_data[25] main_tb.dut.reg_file.write_data[24] main_tb.dut.reg_file.write_data[23] main_tb.dut.reg_file.write_data[22] main_tb.dut.reg_file.write_data[21] main_tb.dut.reg_file.write_data[20] main_tb.dut.reg_file.write_data[19] main_tb.dut.reg_file.write_data[18] main_tb.dut.reg_file.write_data[17] main_tb.dut.reg_file.write_data[16] main_tb.dut.reg_file.write_data[15] main_tb.dut.reg_file.write_data[14] main_tb.dut.reg_file.write_data[13] main_tb.dut.reg_file.write_data[12] main_tb.dut.reg_file.write_data[11] main_tb.dut.reg_file.write_data[10] main_tb.dut.reg_file.write_data[9] main_tb.dut.reg_file.write_data[8] main_tb.dut.reg_file.write_data[7] main_tb.dut.reg_file.write_data[6] main_tb.dut.reg_file.write_data[5] main_tb.dut.reg_file.write_data[4] main_tb.dut.reg_file.write_data[3] main_tb.dut.reg_file.write_data[2] main_tb.dut.reg_file.write_data[1] main_tb.dut.reg_file.write_data[0]
 @28
 main_tb.dut.reg_file.write_enable
-@1401200
+@1000200
 -Reg_file
 @200
 -Controller
-@c00200
+@800200
 -Controller
 @28
 main_tb.dut.ctrlr.reg_write
@@ -131,7 +138,10 @@ main_tb.dut.ctrlr.opcode[6:0]
 @22
 #{main_tb.dut.ctrlr.funct7[6:0]} main_tb.dut.ctrlr.funct7[6] main_tb.dut.ctrlr.funct7[5] main_tb.dut.ctrlr.funct7[4] main_tb.dut.ctrlr.funct7[3] main_tb.dut.ctrlr.funct7[2] main_tb.dut.ctrlr.funct7[1] main_tb.dut.ctrlr.funct7[0]
 main_tb.dut.ctrlr.alu_op[3:0]
-@1401200
+@28
+main_tb.dut.ctrlr.is_mret
+main_tb.dut.fw_unit.flush
+@1000200
 -Controller
 @200
 -mux_fora
@@ -185,7 +195,7 @@ main_tb.dut.mux_operand_B.out[31:0]
 -MUX_operand_B
 @200
 -ALU
-@c00200
+@800200
 -ALU
 @22
 #{main_tb.dut.alu_1.operand_a_i[31:0]} main_tb.dut.alu_1.operand_a_i[31] main_tb.dut.alu_1.operand_a_i[30] main_tb.dut.alu_1.operand_a_i[29] main_tb.dut.alu_1.operand_a_i[28] main_tb.dut.alu_1.operand_a_i[27] main_tb.dut.alu_1.operand_a_i[26] main_tb.dut.alu_1.operand_a_i[25] main_tb.dut.alu_1.operand_a_i[24] main_tb.dut.alu_1.operand_a_i[23] main_tb.dut.alu_1.operand_a_i[22] main_tb.dut.alu_1.operand_a_i[21] main_tb.dut.alu_1.operand_a_i[20] main_tb.dut.alu_1.operand_a_i[19] main_tb.dut.alu_1.operand_a_i[18] main_tb.dut.alu_1.operand_a_i[17] main_tb.dut.alu_1.operand_a_i[16] main_tb.dut.alu_1.operand_a_i[15] main_tb.dut.alu_1.operand_a_i[14] main_tb.dut.alu_1.operand_a_i[13] main_tb.dut.alu_1.operand_a_i[12] main_tb.dut.alu_1.operand_a_i[11] main_tb.dut.alu_1.operand_a_i[10] main_tb.dut.alu_1.operand_a_i[9] main_tb.dut.alu_1.operand_a_i[8] main_tb.dut.alu_1.operand_a_i[7] main_tb.dut.alu_1.operand_a_i[6] main_tb.dut.alu_1.operand_a_i[5] main_tb.dut.alu_1.operand_a_i[4] main_tb.dut.alu_1.operand_a_i[3] main_tb.dut.alu_1.operand_a_i[2] main_tb.dut.alu_1.operand_a_i[1] main_tb.dut.alu_1.operand_a_i[0]
@@ -194,7 +204,7 @@ main_tb.dut.mux_operand_B.out[31:0]
 @22
 main_tb.dut.alu_1.result_o[31:0]
 #{main_tb.dut.alu_1.alu_op[3:0]} main_tb.dut.alu_1.alu_op[3] main_tb.dut.alu_1.alu_op[2] main_tb.dut.alu_1.alu_op[1] main_tb.dut.alu_1.alu_op[0]
-@1401200
+@1000200
 -ALU
 @200
 -Dmem
@@ -230,9 +240,7 @@ main_tb.dut.mux_wb.out[31:0]
 -UART_top
 @28
 main_tb.dut.uart_mod.clk
-@29
 main_tb.dut.uart_mod.tick
-@28
 main_tb.dut.uart_mod.reset
 @22
 #{main_tb.dut.uart_mod.cpu_address[31:0]} main_tb.dut.uart_mod.cpu_address[31] main_tb.dut.uart_mod.cpu_address[30] main_tb.dut.uart_mod.cpu_address[29] main_tb.dut.uart_mod.cpu_address[28] main_tb.dut.uart_mod.cpu_address[27] main_tb.dut.uart_mod.cpu_address[26] main_tb.dut.uart_mod.cpu_address[25] main_tb.dut.uart_mod.cpu_address[24] main_tb.dut.uart_mod.cpu_address[23] main_tb.dut.uart_mod.cpu_address[22] main_tb.dut.uart_mod.cpu_address[21] main_tb.dut.uart_mod.cpu_address[20] main_tb.dut.uart_mod.cpu_address[19] main_tb.dut.uart_mod.cpu_address[18] main_tb.dut.uart_mod.cpu_address[17] main_tb.dut.uart_mod.cpu_address[16] main_tb.dut.uart_mod.cpu_address[15] main_tb.dut.uart_mod.cpu_address[14] main_tb.dut.uart_mod.cpu_address[13] main_tb.dut.uart_mod.cpu_address[12] main_tb.dut.uart_mod.cpu_address[11] main_tb.dut.uart_mod.cpu_address[10] main_tb.dut.uart_mod.cpu_address[9] main_tb.dut.uart_mod.cpu_address[8] main_tb.dut.uart_mod.cpu_address[7] main_tb.dut.uart_mod.cpu_address[6] main_tb.dut.uart_mod.cpu_address[5] main_tb.dut.uart_mod.cpu_address[4] main_tb.dut.uart_mod.cpu_address[3] main_tb.dut.uart_mod.cpu_address[2] main_tb.dut.uart_mod.cpu_address[1] main_tb.dut.uart_mod.cpu_address[0]
@@ -245,7 +253,6 @@ main_tb.dut.uart_mod.dvsr[10:0]
 @28
 main_tb.dut.uart_mod.tx_start
 main_tb.dut.uart_mod.tx
-main_tb.dut.uart_mod.tx_done_tick
 @1000200
 -UART_top
 @c00200
@@ -255,7 +262,7 @@ main_tb.dut.uart_mod.tx_done_tick
 @28
 main_tb.dut.uart_mod.uart_reg_block.clk
 @22
-#{main_tb.dut.uart_mod.uart_reg_block.data_in[31:0]} main_tb.dut.uart_mod.uart_reg_block.data_in[31] main_tb.dut.uart_mod.uart_reg_block.data_in[30] main_tb.dut.uart_mod.uart_reg_block.data_in[29] main_tb.dut.uart_mod.uart_reg_block.data_in[28] main_tb.dut.uart_mod.uart_reg_block.data_in[27] main_tb.dut.uart_mod.uart_reg_block.data_in[26] main_tb.dut.uart_mod.uart_reg_block.data_in[25] main_tb.dut.uart_mod.uart_reg_block.data_in[24] main_tb.dut.uart_mod.uart_reg_block.data_in[23] main_tb.dut.uart_mod.uart_reg_block.data_in[22] main_tb.dut.uart_mod.uart_reg_block.data_in[21] main_tb.dut.uart_mod.uart_reg_block.data_in[20] main_tb.dut.uart_mod.uart_reg_block.data_in[19] main_tb.dut.uart_mod.uart_reg_block.data_in[18] main_tb.dut.uart_mod.uart_reg_block.data_in[17] main_tb.dut.uart_mod.uart_reg_block.data_in[16] main_tb.dut.uart_mod.uart_reg_block.data_in[15] main_tb.dut.uart_mod.uart_reg_block.data_in[14] main_tb.dut.uart_mod.uart_reg_block.data_in[13] main_tb.dut.uart_mod.uart_reg_block.data_in[12] main_tb.dut.uart_mod.uart_reg_block.data_in[11] main_tb.dut.uart_mod.uart_reg_block.data_in[10] main_tb.dut.uart_mod.uart_reg_block.data_in[9] main_tb.dut.uart_mod.uart_reg_block.data_in[8] main_tb.dut.uart_mod.uart_reg_block.data_in[7] main_tb.dut.uart_mod.uart_reg_block.data_in[6] main_tb.dut.uart_mod.uart_reg_block.data_in[5] main_tb.dut.uart_mod.uart_reg_block.data_in[4] main_tb.dut.uart_mod.uart_reg_block.data_in[3] main_tb.dut.uart_mod.uart_reg_block.data_in[2] main_tb.dut.uart_mod.uart_reg_block.data_in[1] main_tb.dut.uart_mod.uart_reg_block.data_in[0]
+#{main_tb.dut.uart_mod.uart_reg_block.data_in[31:0]} main_tb.dut.uart_mod.uart_reg_block.data_in[30] main_tb.dut.uart_mod.uart_reg_block.data_in[29] main_tb.dut.uart_mod.uart_reg_block.data_in[28] main_tb.dut.uart_mod.uart_reg_block.data_in[27] main_tb.dut.uart_mod.uart_reg_block.data_in[26] main_tb.dut.uart_mod.uart_reg_block.data_in[25] main_tb.dut.uart_mod.uart_reg_block.data_in[24] main_tb.dut.uart_mod.uart_reg_block.data_in[23] main_tb.dut.uart_mod.uart_reg_block.data_in[22] main_tb.dut.uart_mod.uart_reg_block.data_in[21] main_tb.dut.uart_mod.uart_reg_block.data_in[20] main_tb.dut.uart_mod.uart_reg_block.data_in[19] main_tb.dut.uart_mod.uart_reg_block.data_in[18] main_tb.dut.uart_mod.uart_reg_block.data_in[17] main_tb.dut.uart_mod.uart_reg_block.data_in[16] main_tb.dut.uart_mod.uart_reg_block.data_in[15] main_tb.dut.uart_mod.uart_reg_block.data_in[14] main_tb.dut.uart_mod.uart_reg_block.data_in[13] main_tb.dut.uart_mod.uart_reg_block.data_in[12] main_tb.dut.uart_mod.uart_reg_block.data_in[11] main_tb.dut.uart_mod.uart_reg_block.data_in[10] main_tb.dut.uart_mod.uart_reg_block.data_in[9] main_tb.dut.uart_mod.uart_reg_block.data_in[8] main_tb.dut.uart_mod.uart_reg_block.data_in[7] main_tb.dut.uart_mod.uart_reg_block.data_in[6] main_tb.dut.uart_mod.uart_reg_block.data_in[5] main_tb.dut.uart_mod.uart_reg_block.data_in[4] main_tb.dut.uart_mod.uart_reg_block.data_in[3] main_tb.dut.uart_mod.uart_reg_block.data_in[2] main_tb.dut.uart_mod.uart_reg_block.data_in[1] main_tb.dut.uart_mod.uart_reg_block.data_in[0]
 main_tb.dut.uart_mod.uart_reg_block.data_out[7:0]
 main_tb.dut.uart_mod.uart_reg_block.dvsr[10:0]
 @28
@@ -263,5 +270,73 @@ main_tb.dut.uart_mod.uart_reg_block.tx_start
 main_tb.dut.uart_mod.uart_reg_block.write_enable
 @1401200
 -UART_reg
+@22
+main_tb.dut.csr1.csr_mepc_ff[31:0]
+@28
+main_tb.dut.csr1.handler_mode[1:0]
+@22
+main_tb.dut.csr1.handler_base[31:2]
+main_tb.dut.csr1.csr_mepc_ff[31:0]
+main_tb.dut.csr1.csr_pre_evec[31:0]
+main_tb.dut.csr1.csr_evec[31:0]
+@28
+main_tb.dut.csr1.inexcept
+main_tb.dut.csr1.csr_epc_taken
+@22
+main_tb.dut.csr1.csr_addr[11:0]
+@28
+main_tb.dut.csr1.interrupt
+main_tb.dut.csr1.csr_is_mret
+main_tb.dut.csr1.interrupt_ff
+main_tb.dut.csr1.csr_interrupt
+main_tb.dut.csr1.MIE
+main_tb.dut.csr1.MTIE
+main_tb.dut.csr1.MTIP
+@c00022
+main_tb.dut.csr1.csr_mie_ff[31:0]
+@28
+(0)main_tb.dut.csr1.csr_mie_ff[31:0]
+(1)main_tb.dut.csr1.csr_mie_ff[31:0]
+(2)main_tb.dut.csr1.csr_mie_ff[31:0]
+(3)main_tb.dut.csr1.csr_mie_ff[31:0]
+(4)main_tb.dut.csr1.csr_mie_ff[31:0]
+(5)main_tb.dut.csr1.csr_mie_ff[31:0]
+(6)main_tb.dut.csr1.csr_mie_ff[31:0]
+(7)main_tb.dut.csr1.csr_mie_ff[31:0]
+(8)main_tb.dut.csr1.csr_mie_ff[31:0]
+(9)main_tb.dut.csr1.csr_mie_ff[31:0]
+(10)main_tb.dut.csr1.csr_mie_ff[31:0]
+(11)main_tb.dut.csr1.csr_mie_ff[31:0]
+(12)main_tb.dut.csr1.csr_mie_ff[31:0]
+(13)main_tb.dut.csr1.csr_mie_ff[31:0]
+(14)main_tb.dut.csr1.csr_mie_ff[31:0]
+(15)main_tb.dut.csr1.csr_mie_ff[31:0]
+(16)main_tb.dut.csr1.csr_mie_ff[31:0]
+(17)main_tb.dut.csr1.csr_mie_ff[31:0]
+(18)main_tb.dut.csr1.csr_mie_ff[31:0]
+(19)main_tb.dut.csr1.csr_mie_ff[31:0]
+(20)main_tb.dut.csr1.csr_mie_ff[31:0]
+(21)main_tb.dut.csr1.csr_mie_ff[31:0]
+(22)main_tb.dut.csr1.csr_mie_ff[31:0]
+(23)main_tb.dut.csr1.csr_mie_ff[31:0]
+(24)main_tb.dut.csr1.csr_mie_ff[31:0]
+(25)main_tb.dut.csr1.csr_mie_ff[31:0]
+(26)main_tb.dut.csr1.csr_mie_ff[31:0]
+(27)main_tb.dut.csr1.csr_mie_ff[31:0]
+(28)main_tb.dut.csr1.csr_mie_ff[31:0]
+(29)main_tb.dut.csr1.csr_mie_ff[31:0]
+(30)main_tb.dut.csr1.csr_mie_ff[31:0]
+(31)main_tb.dut.csr1.csr_mie_ff[31:0]
+@1401200
+-group_end
+@22
+main_tb.dut.csr1.csr_mip_ff[31:0]
+@28
+main_tb.dut.csr1.interrupt_ff
+@22
+main_tb.dut.csr1.csr_mtvec_ff[31:0]
+main_tb.dut.csr1.csr_mstatus_ff[31:0]
+main_tb.dut.csr1.csr_rdata[31:0]
+main_tb.dut.alu_EM.dout[31:0]
 [pattern_trace] 1
 [pattern_trace] 0

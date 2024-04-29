@@ -18,7 +18,7 @@ module main_tb;
 
         @(posedge clk) reset = 0;
 
-        repeat(5) @(posedge clk);
+        repeat(6)@(posedge clk);
         interrupt = 1;
 
         @(posedge clk);

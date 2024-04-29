@@ -1,6 +1,7 @@
 `include "../DEFS/DEFS.svh"
 module forward_unit #(parameter Width = 32) 
     (
+        input logic is_mret,
         input logic dmem_en,
         input logic reg_wrMW, br_taken,
         input logic [Width-1:0] ir_FD,ir_EM,
@@ -15,6 +16,7 @@ module forward_unit #(parameter Width = 32)
 
     assign fora = (EM.rd == FD.rs1)&&FD.rs1&&dmem_en;
     assign forb = (EM.rd == FD.rs2)&&FD.rs2&&dmem_en; 
-    assign flush = br_taken;
+
+    assign flush = br_taken | (is_mret);
     endmodule
     

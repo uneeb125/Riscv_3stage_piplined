@@ -136,6 +136,7 @@ module main#(
 
     register_file reg_file (
         .clk(clk),
+        .rst(resst),
         .write_enable(reg_wrMW),
         .write_address(inst_out_EM[11:7]),
         .write_data(reg_wdata),
@@ -342,6 +343,7 @@ module main#(
 
 
     forward_unit fw_unit(
+        .is_mret(is_mret),
         .dmem_en(dmem_en),
         .reg_wrMW(reg_wrMW),
         .br_taken(br_taken),

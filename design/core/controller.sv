@@ -196,7 +196,12 @@ always_comb begin
             wb_sel     = 2'b11;
             reg_write  = 1'b1;
             br_type    = 2'b00;
-
+            if(funct3 == 3'b0) begin
+                is_mret = 1;
+            end
+            else begin
+                is_mret = 0;
+            end
 
         end
 
@@ -211,15 +216,16 @@ always_comb begin
             wb_sel=2'b00;
             br_type=2'b00;
             sel_A=1'b1;
+            is_mret = 1'b0;
         end
     endcase
 end
 
-always_comb begin
-    is_mret = 1'b0;
-    case ( opcode )
-    32'h30200073: is_mret = 1'b1; // Here 30200073 is hex value of mret instruction
-    endcase
-end
+// always_comb begin
+//     is_mret = 1'b0;
+//     case ( opcode )
+//     32'h30200073: is_mret = 1'b1; // Here 30200073 is hex value of mret instruction
+//     endcase
+// end
 
 endmodule
