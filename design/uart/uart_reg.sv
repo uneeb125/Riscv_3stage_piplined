@@ -8,7 +8,7 @@ module uart_reg (
 
   output logic [10:0] dvsr,
   output logic [7:0] data_out,
-  output logic [7:0] data_in_rx,  // Received data output
+  input logic [7:0] data_in_r,  // Received data output
   output logic       tx_start,
   output logic       rx_enable,
   output logic       full,
@@ -35,7 +35,7 @@ assign data_out = registers[0][7:0];       // Data to transmit
 assign dvsr = registers[1][10:0];          // Baud rate divisor
 assign tx_start = registers[2][0];         // Start transmission
 assign full = registers[0][31];            // Full bit
-assign data_in_rx = registers[0][15:8];    // Assuming received data is stored here
+assign data_in_r= registers[0][15:8];    // Assuming received data is stored here
 
 always_comb begin
   if (address == 5'b0) begin

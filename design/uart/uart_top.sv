@@ -36,14 +36,18 @@ module uart_top (
       .rx_done(rx_done),
       .dvsr(dvsr),
       .data_out(data_out),
-      .data_in_rx(data_in_rx),  // Connection for received data
+      .data_in_r(data_in_rx),  // Connection for received data
       .tx_start(tx_start),
       .rx_enable(rx_enable),
       .full(full),
       .cout(cout)
   );
 
-  uart_rx uart_receiver (
+  uart_rx #(
+    .DBIT(8),
+    .SB_TICK(16)
+  )
+  uart_receiver (
       .clk(clk),
       .reset(reset),
       .rx(rx),
@@ -52,13 +56,16 @@ module uart_top (
       .dout(data_in_rx)  // Correct connection for output data from receiver
   );
 
-  uart_tx uart_transmitter (
-      .clk         (tick),
-      .reset       (reset),
-      .tx_start    (tx_start),
-      .d_tx        (data_out),
-      .tx_done(tx_done),
-      .tx          (tx)
-  );
+  uart_tx #(
+    .DBIT(8),
+    .SB_TICK(16)
+) uart_transmitter (
+    .clk         (tick),
+    .reset       (reset),
+    .tx_start    (tx_start),
+    .d_tx        (data_out),
+    .tx_done(tx_done),
+    .tx          (tx)
+);
 
 endmodule
