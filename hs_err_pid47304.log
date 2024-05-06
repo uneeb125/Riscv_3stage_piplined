@@ -1,0 +1,12 @@
+#
+# An unexpected error has occurred (11)
+#
+Stack:
+/opt/Xilinx/Vivado/2018.2/tps/lnx64/jre/lib/amd64/server/libjvm.so(+0x923da9) [0x73a8ecb23da9]
+/opt/Xilinx/Vivado/2018.2/tps/lnx64/jre/lib/amd64/server/libjvm.so(JVM_handle_linux_signal+0xb6) [0x73a8ecb2a3f6]
+/opt/Xilinx/Vivado/2018.2/tps/lnx64/jre/lib/amd64/server/libjvm.so(+0x9209d3) [0x73a8ecb209d3]
+/lib/x86_64-linux-gnu/libc.so.6(+0x42520) [0x73a931042520]
+/opt/Xilinx/Vivado/2018.2/tps/lnx64/jre/lib/amd64/libawt_xawt.so(+0x42028) [0x73a8cd642028]
+/opt/Xilinx/Vivado/2018.2/tps/lnx64/jre/lib/amd64/libawt_xawt.so(+0x42288) [0x73a8cd642288]
+/opt/Xilinx/Vivado/2018.2/tps/lnx64/jre/lib/amd64/libawt_xawt.so(Java_sun_awt_X11_XRobotPeer_getRGBPixelsImpl+0x17c) [0x73a8cd63a67c]
+[0x73a8dc6184cf]

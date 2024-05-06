@@ -2,12 +2,12 @@ module baud_gen (
     input logic clk,
     reset,
     input logic full,
-    input logic [10:0] dvsr,
+    input logic [31:0] dvsr,
     output logic tick
 );
 
   logic [11:0] count_reg;
-  logic [11:0] dvsr2;
+  logic [31:0] dvsr2;
 
 
     always_ff @( posedge clk, posedge reset ) begin

@@ -1,0 +1,53 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Mon May  6 11:19:00 2024
+# Process ID: 53588
+# Current directory: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design
+# Command line: vivado
+# Log file: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/vivado.log
+# Journal file: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/cep2/cep2.xpr
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/inst.mem] -no_script -reset -force -quiet
+remove_files  /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/inst.mem
+add_files -norecurse /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/inst.mem
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+launch_runs impl_1 -jobs 2
+wait_on_run impl_1
+export_ip_user_files -of_objects  [get_files /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/uartmux.sv] -no_script -reset -force -quiet
+remove_files  /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/uartmux.sv
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+launch_runs impl_1 -jobs 2
+wait_on_run impl_1
+synth_design -rtl -name rtl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+refresh_design
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+close_design
+open_run synth_1 -name synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+launch_runs impl_1 -jobs 2
+wait_on_run impl_1

@@ -1,0 +1,44 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Mon May  6 10:57:52 2024
+# Process ID: 51451
+# Current directory: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined
+# Command line: vivado
+# Log file: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/vivado.log
+# Journal file: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/CEP/CEP.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:06 . Memory (MB): peak = 6092.426 ; gain = 113.023 ; free physical = 1184 ; free virtual = 14506
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Mon May  6 10:58:35 2024] Launched synth_1...
+Run output will be captured here: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/CEP/CEP.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 2
+[Mon May  6 10:59:36 2024] Launched impl_1...
+Run output will be captured here: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/CEP/CEP.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Mon May  6 11:01:27 2024] Launched impl_1...
+Run output will be captured here: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/CEP/CEP.runs/impl_1/runme.log
+reset_run impl_1 -prev_step 
+add_files -norecurse /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Mon May  6 11:02:47 2024] Launched synth_1...
+Run output will be captured here: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/CEP/CEP.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 2
+[Mon May  6 11:03:37 2024] Launched impl_1...
+Run output will be captured here: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/CEP/CEP.runs/impl_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon May  6 11:07:19 2024...

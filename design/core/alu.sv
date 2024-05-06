@@ -33,6 +33,7 @@ begin
         bitwise_sra              : result_o = operand_a_i >>> operand_b_i[4:0]; // Shift right arithmetic
         bitwise_or               : result_o = operand_a_i | operand_b_i;
         bitwise_and              : result_o = operand_a_i & operand_b_i;
+        default                  : result_o=31'b0;
     endcase
 end
 

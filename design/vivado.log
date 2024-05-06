@@ -1,0 +1,591 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Mon May  6 11:19:00 2024
+# Process ID: 53588
+# Current directory: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design
+# Command line: vivado
+# Log file: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/vivado.log
+# Journal file: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/cep2/cep2.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:06 . Memory (MB): peak = 6089.855 ; gain = 107.578 ; free physical = 572 ; free virtual = 13974
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/inst.mem] -no_script -reset -force -quiet
+remove_files  /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/inst.mem
+add_files -norecurse /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/inst.mem
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Mon May  6 11:21:49 2024] Launched synth_1...
+Run output will be captured here: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/cep2/cep2.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Mon May  6 11:22:42 2024] Launched synth_1...
+Run output will be captured here: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/cep2/cep2.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Mon May  6 11:23:36 2024] Launched synth_1...
+Run output will be captured here: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/cep2/cep2.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Mon May  6 11:24:39 2024] Launched synth_1...
+Run output will be captured here: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/cep2/cep2.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 2
+[Mon May  6 11:25:27 2024] Launched impl_1...
+Run output will be captured here: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/cep2/cep2.runs/impl_1/runme.log
+export_ip_user_files -of_objects  [get_files /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/uartmux.sv] -no_script -reset -force -quiet
+remove_files  /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/uartmux.sv
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Mon May  6 11:34:38 2024] Launched synth_1...
+Run output will be captured here: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/cep2/cep2.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 2
+[Mon May  6 11:35:22 2024] Launched impl_1...
+Run output will be captured here: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/cep2/cep2.runs/impl_1/runme.log
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7a75tcsg324-1
+Top: main
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 6367.656 ; gain = 28.828 ; free physical = 561 ; free virtual = 13892
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'main' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:1]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter REG_INDEX_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'Adder4' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/Adder4.sv:1]
+	Parameter Width bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'Adder4' (1#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/Adder4.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'mux2x1' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/mux2x1.sv:1]
+INFO: [Synth 8-226] default block is never used [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/mux2x1.sv:7]
+INFO: [Synth 8-6155] done synthesizing module 'mux2x1' (2#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/mux2x1.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'PCCounter' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/PCCounter.sv:1]
+	Parameter Width bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'PCCounter' (3#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/PCCounter.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'imem' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/imem.sv:1]
+	Parameter AddrWidth bound to: 32 - type: integer 
+INFO: [Synth 8-3876] $readmem data file '/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/inst.mem' is read successfully [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/imem.sv:11]
+INFO: [Synth 8-6155] done synthesizing module 'imem' (4#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/imem.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'buff_sync' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/buff_sync.sv:1]
+	Parameter Width bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'buff_sync' (5#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/buff_sync.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'buff' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/buff.sv:1]
+	Parameter Width bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'buff' (6#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/buff.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'register_file' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/register_file.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'register_file' (7#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/register_file.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'immediategeneration' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/immediategeneration.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'immediategeneration' (8#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/immediategeneration.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'branch_cond' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/branch_cond.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'branch_cond' (9#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/branch_cond.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'alu' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/alu.sv:1]
+	Parameter Data_Width bound to: 32 - type: integer 
+	Parameter Op_Width bound to: 4 - type: integer 
+	Parameter signed_add bound to: 4'b0000 
+	Parameter signed_sub bound to: 4'b0001 
+	Parameter bitwise_sll bound to: 4'b0010 
+	Parameter set_less_than bound to: 4'b0011 
+	Parameter set_less_than_unsigned bound to: 4'b0100 
+	Parameter bitwise_xor bound to: 4'b0101 
+	Parameter bitwise_srl bound to: 4'b0110 
+	Parameter bitwise_sra bound to: 4'b0111 
+	Parameter bitwise_or bound to: 4'b1000 
+	Parameter bitwise_and bound to: 4'b1001 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/alu.sv:25]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (10#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/alu.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'LSU' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/LSU.sv:2]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'LSU' (11#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/LSU.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'dmem' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/dmem.sv:1]
+INFO: [Synth 8-3876] $readmem data file 'data.mem' is read successfully [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/dmem.sv:14]
+INFO: [Synth 8-6155] done synthesizing module 'dmem' (12#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/dmem.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'csr' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/csr.sv:2]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/csr.sv:100]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/csr.sv:121]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/csr.sv:138]
+WARNING: [Synth 8-87] always_comb on 'interrupt_ff_reg' did not result in combinational logic [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/csr.sv:57]
+WARNING: [Synth 8-87] always_comb on 'csr_rdata_reg' did not result in combinational logic [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/csr.sv:122]
+WARNING: [Synth 8-87] always_comb on 'csr_mip_wr_flag_reg' did not result in combinational logic [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/csr.sv:139]
+WARNING: [Synth 8-87] always_comb on 'csr_mie_wr_flag_reg' did not result in combinational logic [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/csr.sv:140]
+WARNING: [Synth 8-87] always_comb on 'csr_mstatus_wr_flag_reg' did not result in combinational logic [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/csr.sv:141]
+WARNING: [Synth 8-87] always_comb on 'csr_mcause_wr_flag_reg' did not result in combinational logic [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/csr.sv:142]
+WARNING: [Synth 8-87] always_comb on 'csr_mtvec_wr_flag_reg' did not result in combinational logic [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/csr.sv:143]
+WARNING: [Synth 8-3848] Net csr_pre_evec in module/entity csr does not have driver. [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/csr.sv:41]
+INFO: [Synth 8-6155] done synthesizing module 'csr' (13#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/csr.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'mux3x1' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/mux_WB.sv:1]
+INFO: [Synth 8-226] default block is never used [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/mux_WB.sv:7]
+INFO: [Synth 8-6155] done synthesizing module 'mux3x1' (14#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/mux_WB.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'controller' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/controller.sv:2]
+INFO: [Synth 8-226] default block is never used [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/controller.sv:65]
+WARNING: [Synth 8-87] always_comb on 'write_en_reg' did not result in combinational logic [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/controller.sv:28]
+WARNING: [Synth 8-87] always_comb on 'read_en_reg' did not result in combinational logic [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/controller.sv:29]
+WARNING: [Synth 8-87] always_comb on 'sel_A_reg' did not result in combinational logic [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/controller.sv:32]
+WARNING: [Synth 8-87] always_comb on 'sel_B_reg' did not result in combinational logic [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/controller.sv:33]
+WARNING: [Synth 8-87] always_comb on 'PCen_reg' did not result in combinational logic [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/controller.sv:34]
+WARNING: [Synth 8-87] always_comb on 'alu_op_reg' did not result in combinational logic [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/controller.sv:38]
+WARNING: [Synth 8-87] always_comb on 'is_mret_reg' did not result in combinational logic [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/controller.sv:200]
+INFO: [Synth 8-6155] done synthesizing module 'controller' (15#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/controller.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'forward_unit' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/forward_unit.sv:2]
+	Parameter Width bound to: 32 - type: integer 
+WARNING: [Synth 8-3848] Net stall in module/entity forward_unit does not have driver. [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/forward_unit.sv:8]
+WARNING: [Synth 8-3848] Net stall_MW in module/entity forward_unit does not have driver. [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/forward_unit.sv:8]
+INFO: [Synth 8-6155] done synthesizing module 'forward_unit' (16#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/forward_unit.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'ctrl_buff' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/ctrl_buff.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'ctrl_buff' (17#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/ctrl_buff.sv:1]
+WARNING: [Synth 8-3848] Net resst in module/entity main does not have driver. [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:139]
+WARNING: [Synth 8-3848] Net dmem_out in module/entity main does not have driver. [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:50]
+INFO: [Synth 8-6155] done synthesizing module 'main' (18#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:1]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port stall
+WARNING: [Synth 8-3331] design forward_unit has unconnected port stall_MW
+WARNING: [Synth 8-3331] design forward_unit has unconnected port reg_wrMW
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[31]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[30]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[29]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[28]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[27]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[26]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[25]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[14]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[13]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[12]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[11]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[10]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[9]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[8]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[7]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[6]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[5]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[4]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[3]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[2]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[1]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[0]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[31]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[30]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[29]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[28]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[27]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[26]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[25]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[24]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[23]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[22]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[21]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[20]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[19]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[18]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[17]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[16]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[15]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[14]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[13]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[12]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[6]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[5]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[4]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[3]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[2]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[1]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[0]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[31]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[30]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[29]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[28]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[27]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[26]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[25]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[24]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[23]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[22]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[21]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[20]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[19]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[18]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[17]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[16]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[15]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[14]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[13]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[12]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[31]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[30]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[29]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[28]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[27]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[26]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[25]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[24]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[23]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[22]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[21]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[20]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[19]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[18]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[17]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[16]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[15]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[14]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[13]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[12]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[11]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[1]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[0]
+WARNING: [Synth 8-3331] design dmem has unconnected port read_en
+WARNING: [Synth 8-3331] design LSU has unconnected port dbus_addr[27]
+WARNING: [Synth 8-3331] design LSU has unconnected port dbus_addr[26]
+WARNING: [Synth 8-3331] design LSU has unconnected port dbus_addr[25]
+WARNING: [Synth 8-3331] design LSU has unconnected port dbus_addr[24]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 6406.906 ; gain = 68.078 ; free physical = 398 ; free virtual = 13838
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin reg_file:rst to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:137]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[31] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[30] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[29] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[28] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[27] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[26] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[25] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[24] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[23] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[22] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[21] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[20] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[19] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[18] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[17] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[16] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[15] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[14] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[13] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[12] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[11] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[10] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[9] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[8] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[7] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[6] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[5] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[4] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[3] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[2] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[1] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[0] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 6406.906 ; gain = 68.078 ; free physical = 383 ; free virtual = 13823
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 6406.906 ; gain = 68.078 ; free physical = 383 ; free virtual = 13823
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a75tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:24 ; elapsed = 00:00:30 . Memory (MB): peak = 6768.270 ; gain = 429.441 ; free physical = 248 ; free virtual = 13594
+50 Infos, 152 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:30 . Memory (MB): peak = 6768.270 ; gain = 429.441 ; free physical = 248 ; free virtual = 13594
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Mon May  6 11:57:04 2024] Launched synth_1...
+Run output will be captured here: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/cep2/cep2.runs/synth_1/runme.log
+refresh_design
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 6774.285 ; gain = 0.000 ; free physical = 616 ; free virtual = 13555
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'main' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:1]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter REG_INDEX_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'Adder4' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/Adder4.sv:1]
+	Parameter Width bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'Adder4' (1#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/Adder4.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'mux2x1' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/mux2x1.sv:1]
+INFO: [Synth 8-226] default block is never used [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/mux2x1.sv:7]
+INFO: [Synth 8-6155] done synthesizing module 'mux2x1' (2#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/mux2x1.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'PCCounter' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/PCCounter.sv:1]
+	Parameter Width bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'PCCounter' (3#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/PCCounter.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'imem' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/imem.sv:1]
+	Parameter AddrWidth bound to: 32 - type: integer 
+INFO: [Synth 8-3876] $readmem data file '/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/inst.mem' is read successfully [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/imem.sv:11]
+INFO: [Synth 8-6155] done synthesizing module 'imem' (4#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/imem.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'buff_sync' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/buff_sync.sv:1]
+	Parameter Width bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'buff_sync' (5#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/buff_sync.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'buff' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/buff.sv:1]
+	Parameter Width bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'buff' (6#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/buff.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'register_file' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/register_file.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'register_file' (7#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/register_file.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'immediategeneration' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/immediategeneration.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'immediategeneration' (8#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/immediategeneration.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'branch_cond' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/branch_cond.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'branch_cond' (9#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/branch_cond.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'alu' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/alu.sv:1]
+	Parameter Data_Width bound to: 32 - type: integer 
+	Parameter Op_Width bound to: 4 - type: integer 
+	Parameter signed_add bound to: 4'b0000 
+	Parameter signed_sub bound to: 4'b0001 
+	Parameter bitwise_sll bound to: 4'b0010 
+	Parameter set_less_than bound to: 4'b0011 
+	Parameter set_less_than_unsigned bound to: 4'b0100 
+	Parameter bitwise_xor bound to: 4'b0101 
+	Parameter bitwise_srl bound to: 4'b0110 
+	Parameter bitwise_sra bound to: 4'b0111 
+	Parameter bitwise_or bound to: 4'b1000 
+	Parameter bitwise_and bound to: 4'b1001 
+INFO: [Synth 8-6155] done synthesizing module 'alu' (10#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/alu.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'LSU' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/LSU.sv:2]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'LSU' (11#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/LSU.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'dmem' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/dmem.sv:1]
+INFO: [Synth 8-3876] $readmem data file 'data.mem' is read successfully [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/dmem.sv:14]
+INFO: [Synth 8-6155] done synthesizing module 'dmem' (12#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/dmem.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'csr' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/csr.sv:2]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/csr.sv:100]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/csr.sv:121]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/csr.sv:138]
+WARNING: [Synth 8-87] always_comb on 'interrupt_ff_reg' did not result in combinational logic [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/csr.sv:57]
+WARNING: [Synth 8-87] always_comb on 'csr_rdata_reg' did not result in combinational logic [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/csr.sv:122]
+WARNING: [Synth 8-87] always_comb on 'csr_mip_wr_flag_reg' did not result in combinational logic [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/csr.sv:139]
+WARNING: [Synth 8-87] always_comb on 'csr_mie_wr_flag_reg' did not result in combinational logic [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/csr.sv:140]
+WARNING: [Synth 8-87] always_comb on 'csr_mstatus_wr_flag_reg' did not result in combinational logic [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/csr.sv:141]
+WARNING: [Synth 8-87] always_comb on 'csr_mcause_wr_flag_reg' did not result in combinational logic [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/csr.sv:142]
+WARNING: [Synth 8-87] always_comb on 'csr_mtvec_wr_flag_reg' did not result in combinational logic [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/csr.sv:143]
+WARNING: [Synth 8-3848] Net csr_pre_evec in module/entity csr does not have driver. [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/csr.sv:41]
+INFO: [Synth 8-6155] done synthesizing module 'csr' (13#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/csr.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'mux3x1' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/mux_WB.sv:1]
+INFO: [Synth 8-226] default block is never used [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/mux_WB.sv:7]
+INFO: [Synth 8-6155] done synthesizing module 'mux3x1' (14#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/mux_WB.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'controller' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/controller.sv:2]
+INFO: [Synth 8-226] default block is never used [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/controller.sv:65]
+WARNING: [Synth 8-87] always_comb on 'write_en_reg' did not result in combinational logic [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/controller.sv:28]
+WARNING: [Synth 8-87] always_comb on 'read_en_reg' did not result in combinational logic [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/controller.sv:29]
+WARNING: [Synth 8-87] always_comb on 'sel_A_reg' did not result in combinational logic [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/controller.sv:32]
+WARNING: [Synth 8-87] always_comb on 'sel_B_reg' did not result in combinational logic [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/controller.sv:33]
+WARNING: [Synth 8-87] always_comb on 'PCen_reg' did not result in combinational logic [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/controller.sv:34]
+WARNING: [Synth 8-87] always_comb on 'alu_op_reg' did not result in combinational logic [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/controller.sv:38]
+WARNING: [Synth 8-87] always_comb on 'is_mret_reg' did not result in combinational logic [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/controller.sv:200]
+INFO: [Synth 8-6155] done synthesizing module 'controller' (15#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/controller.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'forward_unit' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/forward_unit.sv:2]
+	Parameter Width bound to: 32 - type: integer 
+WARNING: [Synth 8-3848] Net stall in module/entity forward_unit does not have driver. [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/forward_unit.sv:8]
+WARNING: [Synth 8-3848] Net stall_MW in module/entity forward_unit does not have driver. [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/forward_unit.sv:8]
+INFO: [Synth 8-6155] done synthesizing module 'forward_unit' (16#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/forward_unit.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'ctrl_buff' [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/ctrl_buff.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'ctrl_buff' (17#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/ctrl_buff.sv:1]
+WARNING: [Synth 8-3848] Net resst in module/entity main does not have driver. [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:139]
+WARNING: [Synth 8-3848] Net dmem_out in module/entity main does not have driver. [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:50]
+INFO: [Synth 8-6155] done synthesizing module 'main' (18#1) [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:1]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port stall
+WARNING: [Synth 8-3331] design forward_unit has unconnected port stall_MW
+WARNING: [Synth 8-3331] design forward_unit has unconnected port reg_wrMW
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[31]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[30]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[29]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[28]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[27]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[26]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[25]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[14]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[13]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[12]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[11]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[10]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[9]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[8]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[7]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[6]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[5]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[4]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[3]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[2]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[1]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_FD[0]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[31]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[30]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[29]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[28]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[27]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[26]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[25]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[24]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[23]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[22]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[21]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[20]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[19]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[18]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[17]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[16]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[15]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[14]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[13]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[12]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[6]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[5]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[4]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[3]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[2]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[1]
+WARNING: [Synth 8-3331] design forward_unit has unconnected port ir_EM[0]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[31]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[30]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[29]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[28]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[27]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[26]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[25]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[24]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[23]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[22]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[21]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[20]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[19]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[18]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[17]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[16]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[15]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[14]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[13]
+WARNING: [Synth 8-3331] design csr has unconnected port csr_addr32[12]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[31]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[30]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[29]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[28]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[27]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[26]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[25]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[24]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[23]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[22]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[21]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[20]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[19]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[18]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[17]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[16]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[15]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[14]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[13]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[12]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[11]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[1]
+WARNING: [Synth 8-3331] design dmem has unconnected port addr[0]
+WARNING: [Synth 8-3331] design dmem has unconnected port read_en
+WARNING: [Synth 8-3331] design LSU has unconnected port dbus_addr[27]
+WARNING: [Synth 8-3331] design LSU has unconnected port dbus_addr[26]
+WARNING: [Synth 8-3331] design LSU has unconnected port dbus_addr[25]
+WARNING: [Synth 8-3331] design LSU has unconnected port dbus_addr[24]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 6775.273 ; gain = 0.988 ; free physical = 625 ; free virtual = 13565
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+WARNING: [Synth 8-3295] tying undriven pin reg_file:rst to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:137]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[31] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[30] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[29] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[28] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[27] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[26] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[25] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[24] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[23] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[22] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[21] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[20] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[19] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[18] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[17] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[16] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[15] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[14] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[13] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[12] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[11] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[10] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[9] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[8] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[7] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[6] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[5] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[4] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[3] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[2] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[1] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+WARNING: [Synth 8-3295] tying undriven pin mux_wb:sel0[0] to constant 0 [/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv:301]
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 6775.273 ; gain = 0.988 ; free physical = 627 ; free virtual = 13567
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 6775.273 ; gain = 0.988 ; free physical = 627 ; free virtual = 13567
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:10 . Memory (MB): peak = 6858.211 ; gain = 83.926 ; free physical = 621 ; free virtual = 13560
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Mon May  6 11:59:23 2024] Launched synth_1...
+Run output will be captured here: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/cep2/cep2.runs/synth_1/runme.log
+close_design
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a75tcsg324-1
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Mon May  6 12:05:23 2024] Launched synth_1...
+Run output will be captured here: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/cep2/cep2.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 2
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Mon May  6 12:12:17 2024] Launched impl_1...
+Run output will be captured here: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/cep2/cep2.runs/impl_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon May  6 14:04:26 2024...

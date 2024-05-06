@@ -1,0 +1,30 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Mon May  6 11:07:27 2024
+# Process ID: 52595
+# Current directory: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined
+# Command line: vivado
+# Log file: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/vivado.log
+# Journal file: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/vivado.jou
+#-----------------------------------------------------------
+start_gui
+create_project cep2 /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/cep2 -part xc7a75tcsg324-1
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2018.2/data/ip'.
+create_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:06 . Memory (MB): peak = 6119.070 ; gain = 49.258 ; free physical = 1210 ; free virtual = 14539
+add_files -norecurse {/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/DEFS/DEFS.svh /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/inst.mem}
+add_files -norecurse {/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/alu.sv /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/mux2x1.sv /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/branch_cond.sv /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/mux_WB.sv /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/csr.sv /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/register_file.sv /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/LSU.sv /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/buff.sv /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/imem.sv /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/PCCounter.sv /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/ctrl_buff.sv /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/immediategeneration.sv /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/controller.sv /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/dmem.sv /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/uartmux.sv /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/Adder4.sv /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/main.sv /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/buff_sync.sv /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/forward_unit.sv /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/csr_regfile.sv}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/csr_regfile.sv] -no_script -reset -force -quiet
+remove_files  /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/design/core/csr_regfile.sv
+add_files -norecurse /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/data.mem
+launch_runs synth_1 -jobs 2
+[Mon May  6 11:11:15 2024] Launched synth_1...
+Run output will be captured here: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/cep2/cep2.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 2
+[Mon May  6 11:12:03 2024] Launched impl_1...
+Run output will be captured here: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/cep2/cep2.runs/impl_1/runme.log

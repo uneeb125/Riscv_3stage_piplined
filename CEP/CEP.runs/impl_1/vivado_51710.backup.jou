@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Mon May  6 10:59:38 2024
+# Process ID: 51710
+# Current directory: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/CEP/CEP.runs/impl_1
+# Command line: vivado -log Adder4.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source Adder4.tcl -notrace
+# Log file: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/CEP/CEP.runs/impl_1/Adder4.vdi
+# Journal file: /home/wajid/CA_Lab/UART/Riscv_3stage_piplined/CEP/CEP.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source Adder4.tcl -notrace

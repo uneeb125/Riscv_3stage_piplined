@@ -8,7 +8,7 @@ module imem #(
     // Memory array to hold the instructions
     logic [31:0] memory_array [511:0];
     initial begin
-        $readmemh("inst.mem", memory_array);
+        $readmemh("/home/wajid/CA_Lab/UART/Riscv_3stage_piplined/inst.mem", memory_array);
     end
     assign instruction = memory_array[address>>2];
 

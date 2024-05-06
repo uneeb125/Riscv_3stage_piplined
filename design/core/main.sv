@@ -280,26 +280,7 @@ module main#(
         .data_out(dmemout)          
     );
 
-    logic rx,tx;
 
-    uart_top uart_mod(
-        .clk(clk),
-        .reset(reset),
-        .cpu_address(alu_out_EM),
-        .cpu_data(wd_out_EM),
-        .write_enable(uart_en && wr_enMW),
-        .cout(uartout),
-        .rx(rx),
-        .tx(tx)
-    );
-
-    uartmux DUmux(
-        .uart_en(uart_en),
-        .dmem_en(dmem_en),
-        .dmemout(dmemout),
-        .uartout(uartout),
-        .dmem_out(dmem_out)
-    );
 
     csr csr1(
         .clk(clk),

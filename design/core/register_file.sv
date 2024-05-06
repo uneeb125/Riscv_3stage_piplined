@@ -13,10 +13,7 @@ module register_file (
     logic [31:0] registers[0:31]; // 16 registers, each 32 bits wide
 
     // Write operation (synchronous with clock)
-    always @(negedge clk, posedge rst) begin
-        if (rst) begin
-            registers[4] = 'b0;
-        end
+    always_ff @(posedge clk) begin
         if (write_enable && write_address != 0) begin // Check for write enable and non-zero address
             registers[write_address] <= write_data;
         end
