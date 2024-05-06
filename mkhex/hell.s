@@ -1,27 +1,28 @@
-    li x4, 0
-    auipc x1, 0
-    add x1, x1, 0x44
-    csrrw x1, mtvec, x1
-    addi x4, x4, 0xff
-    addi x4, x4, 0xff
-    csrrw x1,mie,x4
-    csrrw x1,mip,x4
-    csrrw x1,mstatus,x4
-    sw x1, 0(x0)
-    li x1, 5
-    sw x1, 0(x4)
-    li x2, 1
-    sw x2, 4(x4)
-    li x3, 1
-    sw x3, 8(x4)
-    lw x6, 0(x4)
-    lw x7, 4(x4)
+# Assuming UART address is mapped to 0x80000000
+li a0, 0x80000000   # Load UART address into a0
+lw a1, 0(a0)        # Load the value from UART address into a1
 
-interrupt_handler:
-    csrrw x0,mie,x0
-    csrrw x0,mie,x11
-    li x1, 8
-    mret
+# Check if data has been received
+li t0, 0            # Load 0 into temporary register t0
+beq a1, t0, no_data_received   # Branch if data is equal to 0
+# If data is not equal to 0, UART receiver is working and data has been received
+
+# Data not received
+j end
+
+no_data_received:
+# Data received, do something here
+# For example, print a message or process the received data
+# Here, you might want to write your UART transmit code to send a message indicating successful reception
+
+# For demonstration, let's print a message indicating no data received
+li a0, 0x80000000   # Load UART address into a0
+li a1, 'N'          # Load ASCII character 'N' into a1
+sb a1, 0(a0)        # Store the character into UART data register to transmit
+
+end:
+# End of code
+
 
 
  

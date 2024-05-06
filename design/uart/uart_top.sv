@@ -1,21 +1,26 @@
 module uart_top (
     input  logic        clk,
     input  logic        reset,
+    input logic rx,
     input  logic [31:0] cpu_address,
     input  logic [31:0] cpu_data,
     input  logic        write_enable,
-    output logic [31:0] cout
-    // output logic [ 7:0] dout
+    output logic [31:0] cout,
+    output logic [ 7:0] dout
 );
   logic        tx_done;
   logic [10:0] dvsr;
   logic [ 7:0] data_out;
   logic tx_start;
+  logic rx_done_tick;
+  logic two_stop_bit;
 
 
   logic tick;
 
   logic full;
+  logic [31:0] data_out_r;
+  logic rx_busy;
 
 
   baud_gen uart_baud_gen (
@@ -33,24 +38,27 @@ module uart_top (
       .data_in(cpu_data[30:0]),
       .tx_done(tx_done),
       .cout(cout),
-
+      .data_out_r(data_out_r),
+      .two_stop_bit(two_stop_bit),
       .dvsr(dvsr),
       .data_out(data_out),
       .tx_start(tx_start),
-      .full(full)
+      .full(full),
+      .rx_busy(rx_busy)
   );
 
-  //   uart_rx #(
-  //       .DBIT(8),
-  //       .SB_TICK(16)
-  //   ) uart_receiver (
-  //       .clk(clk),
-  //       .reset(reset),
-  //       .rx(rx),
-  //       .s_tick(tick),
-  //       .rx_done_tick(rx_done_tick),
-  //       .dout(rx_data)
-  //   );
+uart_rx #(
+    .DBIT(8),
+    .SB_TICK(16)
+) uart_receiver (
+    .clk(clk),
+    .reset(reset),
+    .rx_busy(rx_busy),
+    .rx(rx),
+    .s_tick(tick),
+    .rx_done_tick(rx_done_tick),
+    .dout(dout)
+);
 
   uart_tx #(
       .DBIT(8),
@@ -61,6 +69,7 @@ module uart_top (
       .tx_start    (tx_start),
       .d_tx        (data_out),
       .tx_done(tx_done),
+      .two_stop_bit(two_stop_bit),
       .tx          (tx)
   );
 

@@ -2,12 +2,13 @@
 
 module main_tb;
 
-    logic clk, reset, interrupt;
+    logic clk, reset, interrupt,rx;
 
     main dut (
         .clk(clk),
         .reset(reset),
-        .interrupt(interrupt)
+        .interrupt(interrupt),
+        .rx(rx)
     );
 
     always #5 clk = ~clk; 
@@ -20,6 +21,7 @@ module main_tb;
 
         repeat(6)@(posedge clk);
         interrupt = 1;
+        rx=1;
 
         @(posedge clk);
         interrupt = 0;

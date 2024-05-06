@@ -2,7 +2,7 @@ module main#(
     DATA_WIDTH = 32,
     ADDR_WIDTH = 32,
     REG_INDEX_WIDTH = 5)
-    (input logic clk,input reset,input interrupt);
+    (input logic clk,input reset,input interrupt,input rx);
 
     logic stall, stall_MW;
 
@@ -279,14 +279,16 @@ module main#(
         .read_en(rd_enMW),
         .data_out(dmemout)          
     );
-
+logic [7:0]dout;
     uart_top uart_mod(
         .clk(clk),
         .reset(reset),
+        .rx(rx),
         .cpu_address(alu_out_EM),
         .cpu_data(wd_out_EM),
         .write_enable(uart_en && wr_enMW),
-        .cout(uartout)
+        .cout(uartout),
+        .dout(dout)
     );
 
     uartmux DUmux(

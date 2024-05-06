@@ -4,11 +4,22 @@ module uart_tx #(
 ) (
     input logic clk,
     reset,
+    input logic two_stop_bit,
     input logic tx_start,
     input logic [7:0] d_tx,
     output logic tx_done,
-    output logic tx
+    output logic tx 
 );
+
+logic uart_frame_size;
+
+always_comb begin
+  if (two_stop_bit) begin
+uart_frame_size = 11;
+  end else begin
+      uart_frame_size = 10;
+  end
+end	
 
   typedef enum {
     idle,
@@ -70,7 +81,7 @@ module uart_tx #(
       data: begin
         tx_done = 0;
         tx_reg = shift_reg[bit_count];
-          if(bit_count>=DBIT-1)
+          if(bit_count>=uart_frame_size-1)
             state_next = stop;
           else 
             state_next = data;

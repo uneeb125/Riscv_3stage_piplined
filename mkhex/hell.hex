@@ -4,28 +4,14 @@ hell.o:     file format elf32-littleriscv
 
 Disassembly of section .text:
 
-00000000 <interrupt_handler-0x48>:
-   0:	00000213          	[33mli[0m	[34mtp[0m,[35m0[0m
-   4:	00000097          	[33mauipc[0m	[34mra[0m,[35m0x0[0m
-   8:	04408093          	[33madd[0m	[34mra[0m,[34mra[0m,[35m68[0m # 48 <interrupt_handler>
-   c:	305090f3          	[33mcsrrw[0m	[34mra[0m,[34mmtvec[0m,[34mra[0m
-  10:	0ff20213          	[33madd[0m	[34mtp[0m,[34mtp[0m,[35m255[0m # ff <interrupt_handler+0xb7>
-  14:	0ff20213          	[33madd[0m	[34mtp[0m,[34mtp[0m,[35m255[0m # ff <interrupt_handler+0xb7>
-  18:	304210f3          	[33mcsrrw[0m	[34mra[0m,[34mmie[0m,[34mtp[0m
-  1c:	344210f3          	[33mcsrrw[0m	[34mra[0m,[34mmip[0m,[34mtp[0m
-  20:	300210f3          	[33mcsrrw[0m	[34mra[0m,[34mmstatus[0m,[34mtp[0m
-  24:	00102023          	[33msw[0m	[34mra[0m,[35m0[0m([34mzero[0m) # 0 <interrupt_handler-0x48>
-  28:	00500093          	[33mli[0m	[34mra[0m,[35m5[0m
-  2c:	00122023          	[33msw[0m	[34mra[0m,[35m0[0m([34mtp[0m) # 0 <interrupt_handler-0x48>
-  30:	00100113          	[33mli[0m	[34msp[0m,[35m1[0m
-  34:	00222223          	[33msw[0m	[34msp[0m,[35m4[0m([34mtp[0m) # 4 <interrupt_handler-0x44>
-  38:	00100193          	[33mli[0m	[34mgp[0m,[35m1[0m
-  3c:	00322423          	[33msw[0m	[34mgp[0m,[35m8[0m([34mtp[0m) # 8 <interrupt_handler-0x40>
-  40:	00022303          	[33mlw[0m	[34mt1[0m,[35m0[0m([34mtp[0m) # 0 <interrupt_handler-0x48>
-  44:	00422383          	[33mlw[0m	[34mt2[0m,[35m4[0m([34mtp[0m) # 4 <interrupt_handler-0x44>
+00000000 <no_data_received-0x14>:
+   0:	80000537          	[33mlui[0m	[34ma0[0m,[35m0x80000[0m
+   4:	00052583          	[33mlw[0m	[34ma1[0m,[35m0[0m([34ma0[0m) # 80000000 <end+0x7fffffe0>
+   8:	00000293          	[33mli[0m	[34mt0[0m,[35m0[0m
+   c:	00558463          	[33mbeq[0m	[34ma1[0m,[34mt0[0m,[35m14[0m <[32mno_data_received[0m>
+  10:	0100006f          	[33mj[0m	[35m20[0m <[32mend[0m>
 
-00000048 <interrupt_handler>:
-  48:	30401073          	[33mcsrw[0m	[34mmie[0m,[34mzero[0m
-  4c:	30459073          	[33mcsrw[0m	[34mmie[0m,[34ma1[0m
-  50:	00800093          	[33mli[0m	[34mra[0m,[35m8[0m
-  54:	30200073          	[33mmret[0m
+00000014 <no_data_received>:
+  14:	80000537          	[33mlui[0m	[34ma0[0m,[35m0x80000[0m
+  18:	04e00593          	[33mli[0m	[34ma1[0m,[35m78[0m
+  1c:	00b50023          	[33msb[0m	[34ma1[0m,[35m0[0m([34ma0[0m) # 80000000 <end+0x7fffffe0>
