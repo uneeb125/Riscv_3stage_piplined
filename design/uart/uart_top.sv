@@ -4,16 +4,22 @@ module uart_top (
     input  logic [31:0] cpu_address,
     input  logic [31:0] cpu_data,
     input  logic        write_enable,
-    output logic [31:0] cout
+    output logic [31:0] cout,
+    output logic tx_int,
+    output logic rx_int
     // output logic [ 7:0] dout
 );
   logic        tx_done;
   logic [10:0] dvsr;
   logic [ 7:0] data_out;
   logic tx_start;
+  logic snum;
+  logic [7:0] d_rx;
+  logic rx_done;
+  logic rxing;
 
 
-  logic tick;
+  logic tx_tick;
 
   logic full;
 
@@ -23,7 +29,8 @@ module uart_top (
       .clk  (clk),
       .reset(reset),
       .dvsr (dvsr),
-      .tick (tick)
+      .tx_tick (tx_tick),
+      .rx_tick (rx_tick)
   );
 
   uart_reg uart_reg_block (
@@ -32,7 +39,13 @@ module uart_top (
       .address(cpu_address[4:0]),
       .data_in(cpu_data[30:0]),
       .tx_done(tx_done),
+      .rx_done(rx_done),
+      .rxing(rxing),
+      .d_rx(d_rx),
       .cout(cout),
+      .snum(snum),
+      .rx_int(rx_int),
+      .tx_int(tx_int),
 
       .dvsr(dvsr),
       .data_out(data_out),
@@ -40,27 +53,29 @@ module uart_top (
       .full(full)
   );
 
-  //   uart_rx #(
-  //       .DBIT(8),
-  //       .SB_TICK(16)
-  //   ) uart_receiver (
-  //       .clk(clk),
-  //       .reset(reset),
-  //       .rx(rx),
-  //       .s_tick(tick),
-  //       .rx_done_tick(rx_done_tick),
-  //       .dout(rx_data)
-  //   );
+    uart_rx #(
+        .DBIT(8),
+        .SB_TICK(16)
+    ) uart_receiver (
+        .clk(rx_tick),
+        .reset(reset),
+        .snum(snum),
+        .d_rx(d_rx),
+        .rxing(rxing),
+        .rx_done(rx_done),
+        .rx(rx)
+    );
 
   uart_tx #(
       .DBIT(8),
       .SB_TICK(16)
   ) uart_transmitter (
-      .clk         (tick),
+      .clk         (tx_tick),
       .reset       (reset),
       .tx_start    (tx_start),
+      .snum        (snum),
       .d_tx        (data_out),
-      .tx_done(tx_done),
+      .tx_done     (tx_done),
       .tx          (tx)
   );
 

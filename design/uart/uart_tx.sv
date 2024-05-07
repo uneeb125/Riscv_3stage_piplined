@@ -4,6 +4,7 @@ module uart_tx #(
 ) (
     input logic clk,
     reset,
+    input logic snum,
     input logic tx_start,
     input logic [7:0] d_tx,
     output logic tx_done,
@@ -11,10 +12,11 @@ module uart_tx #(
 );
 
   typedef enum {
-    idle,
-    load,
-    data,
-    stop
+    IDLE,
+    LOAD,
+    DATA,
+    STOP1,
+    STOP2
   } state_type;
 
   state_type state_current, state_next;
@@ -22,68 +24,82 @@ module uart_tx #(
   logic [7:0] shift_reg;
   logic tx_reg, tx_next;
 
-  always_ff @(posedge clk, posedge reset)
+  always_ff @(posedge clk, posedge reset) begin
     if (reset) begin
-      state_current <= idle;
+      state_current <= IDLE;
     end else begin
       state_current <= state_next;
     end
+  end
     
     
-  always_ff @(posedge clk, posedge reset)
+  always_ff @(posedge clk, posedge reset) begin
     if (reset) begin
       // tx_done = 1;
       bit_count <= 0;
     end 
-    else if(!(state_current==data)) begin
+    else if(!(state_current==DATA)) begin
       bit_count <= 0;
     end
     else begin
       bit_count <= bit_count + 1;
     end
+  end
   
 
 
   always_comb begin
     
     case (state_current)
-      idle: begin
+      IDLE: begin
         tx_reg = 1;
         tx_done = 0;
         if(tx_start==1)
-          state_next = load;
+          state_next = LOAD;
         else
-          state_next = idle;
+          state_next = IDLE;
       end 
 
-      load: begin
+      LOAD: begin
         tx_reg = 0;
         tx_done = 0;
         if(bit_count==0)begin
           shift_reg = d_tx;
-          state_next = data;
+          state_next = DATA;
         end
         else
-          state_next = load;
+          state_next = LOAD;
       end
 
-      data: begin
+      DATA: begin
         tx_done = 0;
         tx_reg = shift_reg[bit_count];
           if(bit_count>=DBIT-1)
-            state_next = stop;
+            state_next = STOP1;
           else 
-            state_next = data;
+            state_next = DATA;
       end
 
-      stop: begin
+      STOP1: begin
         tx_reg = 1;
           if(tx_start==0)
-            state_next = idle;
+            if(!snum) state_next = IDLE;
+            else state_next = STOP2;
           else
-            state_next = stop;
+            state_next = STOP1;
             tx_done = 1;
       end
+
+      STOP2: begin
+        tx_reg = 1;
+          if(tx_start==0)
+            state_next = STOP2;
+          else
+            state_next = STOP2;
+            tx_done = 1;
+      end
+
+      default: state_next = IDLE;
     endcase
 
   end

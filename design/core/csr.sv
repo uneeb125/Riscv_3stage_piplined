@@ -117,6 +117,7 @@ end
 
   //CSR read operation 
   always_comb begin
+    csr_rdata = 'b0;
     if (csr_reg_rdpin) begin
       case (csr_addr)
         MIP_ADDR:     csr_rdata = csr_mip_ff;
@@ -133,6 +134,12 @@ end
 
   //CSR write operation
   always_comb begin
+    csr_mip_wr_flag     = 1'b0;
+    csr_mie_wr_flag     = 1'b0;
+    csr_mstatus_wr_flag = 1'b0;
+    csr_mcause_wr_flag  = 1'b0;
+    csr_mtvec_wr_flag   = 1'b0;
+    csr_mepc_wr_flag    = 1'b0;
 
     if (csr_reg_wrpin) begin
       case (csr_addr)
@@ -143,7 +150,8 @@ end
         MTVEC_ADDR:   csr_mtvec_wr_flag = 1'b1;
         MEPC_ADDR:    csr_mepc_wr_flag = 1'b1;
       endcase
-    end else begin
+    end 
+    else begin
       csr_mip_wr_flag     = 1'b0;
       csr_mie_wr_flag     = 1'b0;
       csr_mstatus_wr_flag = 1'b0;
