@@ -67,8 +67,8 @@ module csr (
 
 
   logic MTIP, MTIE, MIE;
-  assign MTIP = csr_mip_ff[7];
-  assign MTIE = csr_mie_ff[7];
+  assign MTIP = csr_mip_ff[16];
+  assign MTIE = csr_mie_ff[16];
   assign MIE  = csr_mstatus_ff[3];
 
   always_comb begin
@@ -169,7 +169,7 @@ end
     end else if (csr_mip_wr_flag) begin
       csr_mip_ff <= csr_wdata;
     end else if (interrupt_ff) begin
-      csr_mip_ff[7] <= interrupt_ff;
+      csr_mip_ff[16] <= interrupt_ff;
       inter_assert <= 1'b0;
 
     end

@@ -5,7 +5,7 @@ module main#(
     (input logic clk,input reset,input interrupt);
 
     logic stall, stall_MW;
-
+    logic uart_rx_interrupt;
     logic [ADDR_WIDTH-1:0] pc_next, pc_in_FD, pc_out_FD, pc_out_EM;
     logic PCen;
 
@@ -286,7 +286,9 @@ module main#(
         .cpu_address(alu_out_EM),
         .cpu_data(wd_out_EM),
         .write_enable(uart_en && wr_enMW),
-        .cout(uartout)
+        .cout(uartout),
+        .tx_int(tx_int),
+        .rx_int(rx_int)
     );
 
     uartmux DUmux(
@@ -303,7 +305,7 @@ module main#(
         .csr_reg_wrpin(csr_reg_wrpin_MW),
         .csr_reg_rdpin(csr_reg_wrpin_MW),
         .csr_is_mret(is_mret_MW),
-        .interrupt(interrupt),
+        .interrupt(rx_int),
         .csr_pc(pc_out_EM),
         .csr_addr32(immediate_value_EM),
         .csr_wdata(ALU_in_A_EM),

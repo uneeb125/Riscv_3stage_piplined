@@ -25,7 +25,6 @@ module uart_top (
 
 
   baud_gen uart_baud_gen (
-      .full (full),
       .clk  (clk),
       .reset(reset),
       .dvsr (dvsr),

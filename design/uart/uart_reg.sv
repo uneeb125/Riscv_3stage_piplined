@@ -6,7 +6,7 @@ module uart_reg (
     input logic        tx_done,
     input logic        snum,
     input logic        rx_done,
-    input logic        d_rx,
+    input logic [7:0]  d_rx,
     input logic        rxing,
 
     output logic [10:0] dvsr,
