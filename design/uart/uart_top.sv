@@ -17,6 +17,7 @@ module uart_top (
   logic [7:0] d_rx;
   logic rx_done;
   logic rxing;
+  logic tx, rx;
 
 
   logic tx_tick;
@@ -77,5 +78,7 @@ module uart_top (
       .tx_done     (tx_done),
       .tx          (tx)
   );
+
+  assign rx = tx;
 
 endmodule
