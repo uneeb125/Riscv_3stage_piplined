@@ -4,7 +4,6 @@ module uart_reg (
     input logic [ 4:0] address,
     input logic [30:0] data_in,
     input logic        tx_done,
-    input logic        snum,
     input logic        rx_done,
     input logic [7:0]  d_rx,
     input logic        rxing,
@@ -15,11 +14,13 @@ module uart_reg (
     output logic full,
     output logic [31:0] cout,
     output logic tx_int,
-    output logic rx_int
+    output logic rx_int,
+    output logic  snum
 );
 
   logic [31:0] registers[0:5];
-  
+  logic rxinten,rxintpend;
+  logic [31:0]test;
 
   always @(negedge clk) begin
     if (write_enable) begin
@@ -35,10 +36,10 @@ module uart_reg (
     else if (rxing) begin
       registers[3] <= registers[3] & !(32'h80000000);
     end
-    else if (rx_done) begin
+    if (rx_done) begin
       registers[3] <= d_rx;
-      registers[4][1] <= 1'b1;
     end
+      registers[4][1] <= rx_done;
     
   end
 
@@ -49,9 +50,13 @@ module uart_reg (
   assign snum = registers[2][1];
   assign tx_int = registers[5][0] & registers[4][0];
   assign rx_int = registers[5][1] & registers[4][1];
+  assign rxinten = registers[5][1];
+  assign rxintpend = registers[4][1];
+  assign test = registers[3];
+
 
   always_comb begin
-    if (address==5'b0 | address==5'hC) begin
+    if (address==5'b0 ) begin
       cout = 32'h80000000 & registers[address>>2];
     end
     else begin

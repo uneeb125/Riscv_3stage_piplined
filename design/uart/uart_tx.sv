@@ -93,7 +93,7 @@ module uart_tx #(
       STOP2: begin
         tx_reg = 1;
           if(tx_start==0)
-            state_next = STOP2;
+            state_next = IDLE;
           else
             state_next = STOP2;
             tx_done = 1;

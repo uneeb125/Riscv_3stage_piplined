@@ -8,38 +8,28 @@ Disassembly of section .text:
    0:	0140006f          	[33mj[0m	[35m14[0m <[32mmain[0m>
 
 00000004 <interrupt_handler>:
-   4:	30401073          	[33mcsrw[0m	[34mmie[0m,[34mzero[0m
-   8:	30459073          	[33mcsrw[0m	[34mmie[0m,[34ma1[0m
-   c:	00800093          	[33mli[0m	[34mra[0m,[35m8[0m
+   4:	80000237          	[33mlui[0m	[34mtp[0m,[35m0x80000[0m
+   8:	01022083          	[33mlw[0m	[34mra[0m,[35m16[0m([34mtp[0m) # 80000010 <loop+0x7fffffbc>
+   c:	00102223          	[33msw[0m	[34mra[0m,[35m4[0m([34mzero[0m) # 4 <interrupt_handler>
   10:	30200073          	[33mmret[0m
 
 00000014 <main>:
   14:	00002083          	[33mlw[0m	[34mra[0m,[35m0[0m([34mzero[0m) # 0 <interrupt_handler-0x4>
   18:	80000237          	[33mlui[0m	[34mtp[0m,[35m0x80000[0m
-  1c:	00122023          	[33msw[0m	[34mra[0m,[35m0[0m([34mtp[0m) # 80000000 <loop+0x7fffff84>
+  1c:	00122023          	[33msw[0m	[34mra[0m,[35m0[0m([34mtp[0m) # 80000000 <loop+0x7fffffac>
   20:	00200113          	[33mli[0m	[34msp[0m,[35m2[0m
   24:	00222223          	[33msw[0m	[34msp[0m,[35m4[0m([34mtp[0m) # 4 <interrupt_handler>
-  28:	00100193          	[33mli[0m	[34mgp[0m,[35m1[0m
-  2c:	00322423          	[33msw[0m	[34mgp[0m,[35m8[0m([34mtp[0m) # 8 <interrupt_handler+0x4>
-  30:	00022303          	[33mlw[0m	[34mt1[0m,[35m0[0m([34mtp[0m) # 0 <interrupt_handler-0x4>
-  34:	00422383          	[33mlw[0m	[34mt2[0m,[35m4[0m([34mtp[0m) # 4 <interrupt_handler>
-  38:	00000213          	[33mli[0m	[34mtp[0m,[35m0[0m
-  3c:	00400093          	[33mli[0m	[34mra[0m,[35m4[0m
-  40:	305090f3          	[33mcsrrw[0m	[34mra[0m,[34mmtvec[0m,[34mra[0m
-  44:	0ff20213          	[33madd[0m	[34mtp[0m,[34mtp[0m,[35m255[0m # ff <loop+0x83>
-  48:	0ff20213          	[33madd[0m	[34mtp[0m,[34mtp[0m,[35m255[0m # ff <loop+0x83>
-  4c:	304210f3          	[33mcsrrw[0m	[34mra[0m,[34mmie[0m,[34mtp[0m
-  50:	344210f3          	[33mcsrrw[0m	[34mra[0m,[34mmip[0m,[34mtp[0m
-  54:	300210f3          	[33mcsrrw[0m	[34mra[0m,[34mmstatus[0m,[34mtp[0m
-  58:	00102023          	[33msw[0m	[34mra[0m,[35m0[0m([34mzero[0m) # 0 <interrupt_handler-0x4>
-  5c:	00500093          	[33mli[0m	[34mra[0m,[35m5[0m
-  60:	00122023          	[33msw[0m	[34mra[0m,[35m0[0m([34mtp[0m) # 0 <interrupt_handler-0x4>
-  64:	00100113          	[33mli[0m	[34msp[0m,[35m1[0m
-  68:	00222223          	[33msw[0m	[34msp[0m,[35m4[0m([34mtp[0m) # 4 <interrupt_handler>
-  6c:	00100193          	[33mli[0m	[34mgp[0m,[35m1[0m
-  70:	00322423          	[33msw[0m	[34mgp[0m,[35m8[0m([34mtp[0m) # 8 <interrupt_handler+0x4>
-  74:	00022303          	[33mlw[0m	[34mt1[0m,[35m0[0m([34mtp[0m) # 0 <interrupt_handler-0x4>
-  78:	00422383          	[33mlw[0m	[34mt2[0m,[35m4[0m([34mtp[0m) # 4 <interrupt_handler>
+  28:	00300193          	[33mli[0m	[34mgp[0m,[35m3[0m
+  2c:	00322a23          	[33msw[0m	[34mgp[0m,[35m20[0m([34mtp[0m) # 14 <main>
+  30:	00100193          	[33mli[0m	[34mgp[0m,[35m1[0m
+  34:	00322423          	[33msw[0m	[34mgp[0m,[35m8[0m([34mtp[0m) # 8 <interrupt_handler+0x4>
+  38:	00022303          	[33mlw[0m	[34mt1[0m,[35m0[0m([34mtp[0m) # 0 <interrupt_handler-0x4>
+  3c:	00422383          	[33mlw[0m	[34mt2[0m,[35m4[0m([34mtp[0m) # 4 <interrupt_handler>
+  40:	00800233          	[33madd[0m	[34mtp[0m,[34mzero[0m,[34ms0[0m
+  44:	00400093          	[33mli[0m	[34mra[0m,[35m4[0m
+  48:	305090f3          	[33mcsrrw[0m	[34mra[0m,[34mmtvec[0m,[34mra[0m
+  4c:	304410f3          	[33mcsrrw[0m	[34mra[0m,[34mmie[0m,[34ms0[0m
+  50:	300210f3          	[33mcsrrw[0m	[34mra[0m,[34mmstatus[0m,[34mtp[0m
 
-0000007c <loop>:
-  7c:	0000006f          	[33mj[0m	[35m7c[0m <[32mloop[0m>
+00000054 <loop>:
+  54:	0000006f          	[33mj[0m	[35m54[0m <[32mloop[0m>

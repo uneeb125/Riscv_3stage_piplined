@@ -9,9 +9,13 @@ module register_file (
     output logic [31:0] read_data2  // Data from second read address
 );
 
+
+
     // Declare the register array
     logic [31:0] registers[0:31]; // 16 registers, each 32 bits wide
-
+    initial begin
+        registers[8] = 32'hffffffff;
+    end
     // Write operation (synchronous with clock)
     always @(negedge clk, posedge rst) begin
         if (rst) begin
