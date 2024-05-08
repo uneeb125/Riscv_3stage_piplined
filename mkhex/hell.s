@@ -2,7 +2,7 @@ j main
 
 interrupt_handler:
     lui x4, 0x80000
-    lw x1, 16(x4)
+    lw x1, 12(x4)
     sw x1, 4(x0)
     mret
 main:

@@ -9,7 +9,7 @@ Disassembly of section .text:
 
 00000004 <interrupt_handler>:
    4:	80000237          	[33mlui[0m	[34mtp[0m,[35m0x80000[0m
-   8:	01022083          	[33mlw[0m	[34mra[0m,[35m16[0m([34mtp[0m) # 80000010 <loop+0x7fffffbc>
+   8:	00c22083          	[33mlw[0m	[34mra[0m,[35m12[0m([34mtp[0m) # 8000000c <loop+0x7fffffb8>
    c:	00102223          	[33msw[0m	[34mra[0m,[35m4[0m([34mzero[0m) # 4 <interrupt_handler>
   10:	30200073          	[33mmret[0m
 
