@@ -95,7 +95,7 @@ end
 
     if (csr_interrupt & !(inexcept)) begin
       csr_epc_taken  <= 1'b1;
-      csr_mepc_ff    <= csr_pc;
+      csr_mepc_ff    <= csr_pc-4;
       inexcept <= 1'b1;
       case (handler_mode)
         2'b00: csr_evec <= handler_base;
